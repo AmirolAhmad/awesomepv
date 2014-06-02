@@ -1,0 +1,11 @@
+<section class="grid-wrap">
+  <ul class="grid swipe-rotate" id="grid">
+    <% @posts.each do |post| %>
+    <li>
+      <a href="<%= post_path(post) %>"><img src="http://i3.ytimg.com/vi/<%= post.youtube_id %>/hqdefault.jpg" alt="<%= post.title %>">
+        <h3><%= post.title %></h3>
+      </a>
+    </li>
+    <% end %>
+  </ul>
+</section>

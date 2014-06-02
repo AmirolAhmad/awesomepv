@@ -1,17 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Awesomepv</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+  	<title>AwesomePV</title>
+  	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="author" content="" />
+	<%= stylesheet_link_tag    'application', media: 'all' %>
+	<script src="../assets/javascripts/modernizr.custom.js"></script>
+	<%= csrf_meta_tags %>
 </head>
 <body>
+	<div class="container">
 
-	<p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+		<!-- Top Navigation -->
+		<!--
+		<div class="codrops-top clearfix">
+			<a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Development/ButtonComponentMorph/"><span>Previous Demo</span></a>
+			<span class="right"><a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=19069"><span>Back to the Codrops Article</span></a></span>
+		</div>
+		-->
+		<header class="codrops-header">
+			<h1>Awesome Video <span>Watch the Awesome Videos ever that you are never watch before.</span></h1>	
+			<nav class="codrops-demos">
+				<a href="#">Swipe right</a>
+				<a href="#">Swipe Down</a>
+				<a class="current-demo" href="#">Rotate</a>
+			</nav>
+		</header>
 
-<%= yield %>
+		<p class="notice"><%= notice %></p>
+	    <p class="alert"><%= alert %></p>
+
+		<%= yield %>
+
+	</div>
+
+	<script src="../assets/javascripts/masonry.pkgd.min.js"></script>
+	<script src="../assets/javascripts/imagesloaded.pkgd.min.js"></script>
+	<script src="../assets/javascripts/classie.js"></script>
+	<script src="../assets/javascripts/colorfinder-1.1.js"></script>
+	<script src="../assets/javascripts/gridScrollFx.js"></script>
+	<script>
+		new GridScrollFx( document.getElementById( 'grid' ), {
+			viewportFactor : 0.4
+		} );
+	</script>
 
 </body>
 </html>
