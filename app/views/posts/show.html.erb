@@ -9,22 +9,27 @@
 	<div class="page-header">
 	  <h1>
 	  	<%= @post.title %>
+
+	  	<br />
+
+	  	<div style="margin-top:10px;">
+			<div class="fb-share-button" data-href="<%= 'http://awesomepv.com' + post_path(@post) %>" data-type="button" style="top:-5px"></div>
+			<a href="https://twitter.com/share" class="twitter-share-button" data-dnt="true" data-count="none" data-via="awesome_pv">Tweet</a>
+		</div>
+
 	  	<% if user_signed_in? %>
 	  	<small>
 	  		<%= link_to 'Edit', edit_post_path(@post), :class => "btn btn-primary btn-md" %>
 	  		<%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-md" %>
 	  	</small>
 	  	<% end %>
+
 	  </h1>
 	</div>
 
 	<div class="video-container">
 		<iframe width="853" height="480" src="//www.youtube.com/embed/<%= @post.youtube_id %>?rel=0&autoplay=1&vq=hd720" frameborder="0" allowfullscreen></iframe>
 	</div>
-
-	<br />
-
-	<div class="fb-share-button" data-href="<%= 'http://awesomepv.com' + post_path(@post) %>" data-type="button"></div>
 
 	<hr>
 
