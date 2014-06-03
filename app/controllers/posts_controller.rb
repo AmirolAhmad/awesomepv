@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
 	def index
 		if params[:q]
-			@posts = Post.search(params[:q]).order("created_at DESC").paginate(:page => params[:page], :per_page => 32)
+			@posts = Post.search(params[:q].to_s).order("created_at DESC").paginate(:page => params[:page], :per_page => 32)
 		else
 			@posts = Post.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 32)
 		end
