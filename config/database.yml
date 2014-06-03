@@ -27,9 +27,9 @@ test:
 
 production:
   <<: *default
-  host: localhost
+  host: ec2-54-225-101-119.compute-1.amazonaws.com
   encoding: unicode
-  database: awesomepv
-  #username: root
-  #password: root
+  database: d65ije1a0v0be5
+  username: bjjobdagawfdkl
+  password: XU8jFf4NwymYm8B-yvoUJfwfN5
   port: 5432
