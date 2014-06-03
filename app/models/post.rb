@@ -3,6 +3,8 @@ class Post < ActiveRecord::Base
 	validates :description, presence: true, length: { minimum: 5 }
 	validates :youtube_id, presence: true, length: { minimum: 5 }
 
+	DISQUS_SHORTNAME = Rails.env == "development" ? "awesomevideos".freeze : "awesomevideos".freeze
+
 	def self.search(query)
 	  where("text LIKE ?", "%#{query}%")
 	end
