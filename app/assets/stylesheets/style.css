@@ -15,7 +15,8 @@
 .clearfix:after { clear: both; }
 
 body {
-	background: #D3EEE2;
+	/*background: #D3EEE2;*/
+	background: url("http://subtlepatterns.com/patterns/shattered.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
 	color: #2E3444;
 	/*font-size: 100%;
 	line-height: 1.25;
@@ -54,7 +55,7 @@ a:hover, a:focus {
 
 /* Demo links */
 .codrops-demos {
-	padding-top: 50px;
+	padding-top: 20px;
 }
 
 .codrops-demos a {
