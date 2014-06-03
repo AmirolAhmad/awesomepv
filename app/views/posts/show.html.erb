@@ -21,7 +21,10 @@
 
 	<hr>
 
-	<p class="lead"><%= @post.description %></p>
+	<p class="lead">
+		<%= @post.description %><br />
+		<strong><%= @post.view_count %></strong> views
+	</p>
 
 	<%= link_to 'Back', posts_path, :class => "btn btn-primary btn-lg" %>
 

@@ -23,6 +23,7 @@ class PostsController < ApplicationController
 
 	def show
 		@post = Post.find(params[:id])
+		@post.increment!(:view_count)
 
 		@posts = Post.all.order("random()").paginate(:page => params[:page], :per_page => 8)
 	end
