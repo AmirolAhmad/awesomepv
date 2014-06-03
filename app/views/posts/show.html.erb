@@ -1,6 +1,9 @@
 <% provide(:title, @post.title) %>
 <%= simple_format(provide(:description, @post.description.split[0..56].join(" "))) %>
 
+<% provide(:url, 'http://awesomepv.com' + post_path(@post)) %>
+<% provide(:thumbnail, 'http://i3.ytimg.com/vi/' + @post.youtube_id + '/hqdefault.jpg') %>
+
 <div class="container">
 
 	<div class="page-header">
