@@ -82,4 +82,8 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.action_mailer.default_url_options = { host: 'www.awesomepv.com' }
+
+  if ENV["pub-memcache-13063.us-east-1-3.3.ec2.garantiadata.com:13063"]
+    config.cache_store = :dalli_store, ENV["pub-memcache-13063.us-east-1-3.3.ec2.garantiadata.com:13063"].split(','), { :username => ENV["memcached-app25962269"], :password => ENV["p7LkOKj9fnH7B3f1"] }
+  end
 end

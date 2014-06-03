@@ -43,6 +43,7 @@ gem 'will_paginate-bootstrap'
 gem 'devise'
 gem 'secure_headers'
 gem 'newrelic_rpm'
+gem 'dalli'
 
 # for heroku
 gem 'rails_12factor', group: :production
