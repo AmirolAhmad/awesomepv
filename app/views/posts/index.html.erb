@@ -18,6 +18,9 @@
       <h1>No video found!</h1>
       <%= link_to "Back", root_path, :class => 'btn btn-primary btn-md' %>
     <% else %>
+      <li class="title-box">
+        <a href="https://affiliates.mozilla.org/referral/56831/"><img src="https://affiliates.mozilla.org/media/uploads/banners/066ac34f247ac5121eed1e9cefb0383569c62903.png" alt=""></a>
+      </li>
       <% @posts.each do |post| %>
       <li>
         <a href="<%= post_path(post) %>"><img src="http://i3.ytimg.com/vi/<%= post.youtube_id %>/hqdefault.jpg" alt="<%= post.title %>">
