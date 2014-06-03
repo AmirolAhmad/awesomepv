@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
 	DISQUS_SHORTNAME = Rails.env == "development" ? "awesomevideos".freeze : "awesomevideos".freeze
 
 	def self.search(query)
-	  where("text LIKE ?", "%#{query}%")
+	  where("title LIKE ?", "%#{query}%")
 	end
 
 	def to_param

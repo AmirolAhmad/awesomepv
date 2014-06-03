@@ -1,6 +1,14 @@
 <% provide(:title, 'Homepage') %>
 <% provide(:description, 'Watch the Awesome Videos ever that you are never watch before.') %>
 
+<div class="col-md-4 col-md-offset-4">
+    <div class="form-group">
+    <%= form_tag(posts_path, method: "get") do %>
+        <%= text_field_tag(:q, params[:search], class: 'form-control', placeholder: 'Search') %>
+    <% end %>
+    </div>
+</div>
+
 <section class="grid-wrap">
   <ul class="grid swipe-rotate" id="grid">
     <% @posts.each do |post| %>

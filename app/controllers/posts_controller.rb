@@ -3,7 +3,11 @@ class PostsController < ApplicationController
 	before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
 	def index
-		@posts = Post.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 24)
+		if params[:q]
+			@posts = Post.search(params[:q]).order("created_at DESC").paginate(:page => params[:page], :per_page => 32)
+		else
+			@posts = Post.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 32)
+		end
 	end
 
 	def new
