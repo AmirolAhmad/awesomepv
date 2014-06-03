@@ -4,39 +4,39 @@
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
-  	<title>AwesomePV</title>
-  	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<meta name="author" content="" />
+  	<title>Awesome Video | <%= yield(:title) %></title>
+  	<meta name="description" content="<%= yield(:description) %>" />
+	<meta name="keywords" content="9gag, tv, video, jokes, interesting, cool, fun collection, fun portfolio, admire, fun, humor, humour, just for fun, funny, prank, scary, brazil funny, sexy lady, lol" />
+	<meta name="author" content="AwesomePV" />
 	<%= stylesheet_link_tag    'application', media: 'all' %>
+	<%= javascript_include_tag 'application' %>
 	<script src="../assets/javascripts/modernizr.custom.js"></script>
 	<%= csrf_meta_tags %>
 </head>
 <body>
-	<div class="container">
 
-		<!-- Top Navigation -->
-		<!--
-		<div class="codrops-top clearfix">
-			<a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Development/ButtonComponentMorph/"><span>Previous Demo</span></a>
-			<span class="right"><a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=19069"><span>Back to the Codrops Article</span></a></span>
-		</div>
-		-->
-		<header class="codrops-header">
-			<h1>Awesome Video <span>Watch the Awesome Videos ever that you are never watch before.</span></h1>	
-			<nav class="codrops-demos">
-				<a href="#">Swipe right</a>
-				<a href="#">Swipe Down</a>
-				<a class="current-demo" href="#">Rotate</a>
-			</nav>
-		</header>
-
-		<p class="notice"><%= notice %></p>
-	    <p class="alert"><%= alert %></p>
-
-		<%= yield %>
-
+	<!-- Top Navigation -->
+	<!--
+	<div class="codrops-top clearfix">
+		<a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Development/ButtonComponentMorph/"><span>Previous Demo</span></a>
+		<span class="right"><a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=19069"><span>Back to the Codrops Article</span></a></span>
 	</div>
+	-->
+	<header class="codrops-header">
+		<h1>Awesome Video <span>Watch the Awesome Videos ever that you are never watch before.</span></h1>
+		<% if user_signed_in? %>
+		<nav class="codrops-demos">
+			<%= link_to 'Video List', posts_path %>
+			<%= link_to 'Submit Video', new_post_path %>
+			<%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+		</nav>
+		<% end %>
+	</header>
+
+	<p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+	<%= yield %>
 
 	<script src="../assets/javascripts/masonry.pkgd.min.js"></script>
 	<script src="../assets/javascripts/imagesloaded.pkgd.min.js"></script>

@@ -1,8 +1,8 @@
-<% provide(:title, 'Submit Video') %>
+<% provide(:title, 'Edit submitted video') %>
 
 <div class="container">
 
-  <%= form_for :post, url: posts_path do |f| %>
+  <%= form_for :post, url: post_path(@post), method: :patch do |f| %>
 
     <% if @post.errors.any? %>
     <div id="error_explanation">

@@ -1,20 +1,42 @@
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+<% provide(:title, @post.title) %>
+<%= simple_format(provide(:description, @post.description.split[0..56].join(" "))) %>
 
-<p>
-  <strong>Video URL:</strong>
-  <%= @post.youtube_id %>
-</p>
+<div class="container">
 
-<div class="video-container">
-	<iframe width="1280" height="720" src="//www.youtube.com/embed/<%= @post.youtube_id %>?rel=0&autoplay=1&vq=hd720" frameborder="0" allowfullscreen></iframe>
+	<div class="page-header">
+	  <h1>
+	  	<%= @post.title %>
+	  	<% if user_signed_in? %>
+	  	<small>
+	  		<%= link_to 'Edit', edit_post_path(@post), :class => "btn btn-primary btn-md" %>
+	  		<%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-md" %>
+	  	</small>
+	  	<% end %>
+	  </h1>
+	</div>
+
+	<div class="video-container">
+		<iframe width="853" height="480" src="//www.youtube.com/embed/<%= @post.youtube_id %>?rel=0&autoplay=1&vq=hd720" frameborder="0" allowfullscreen></iframe>
+	</div>
+
+	<hr>
+
+	<p class="lead"><%= @post.description %></p>
+
+	<%= link_to 'Back', posts_path, :class => "btn btn-primary btn-lg" %>
+
+	<hr>
+
 </div>
- 
-<p>
-  <strong>Description:</strong>
-  <%= @post.description %>
-</p>
 
-<%= link_to 'Back', posts_path %>
+<section class="grid-wrap">
+  <ul class="grid swipe-rotate" id="grid">
+    <% @posts.each do |post| %>
+    <li>
+      <a href="<%= post_path(post) %>"><img src="http://i3.ytimg.com/vi/<%= post.youtube_id %>/hqdefault.jpg" alt="<%= post.title %>">
+        <h3><%= post.title %></h3>
+      </a>
+    </li>
+    <% end %>
+  </ul>
+</section>
