@@ -36,11 +36,12 @@
 			<%= link_to 'Submit Video', new_post_path %>
 			<%= link_to 'Logout', destroy_user_session_path, method: :delete %>
 		</nav>
+		<% else %>
+		<nav class="codrops-demos">
+			<a href="https://docs.google.com/forms/d/153d6JJqAVWX58PvJVZ3SIlUP5CJ4gDrRFpbR3rZLjOA/viewform" target="_blank">Suggest a Video</a>
+		</nav>
 		<% end %>
 	</header>
-
-	<p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
 
 	<%= yield %>
 
