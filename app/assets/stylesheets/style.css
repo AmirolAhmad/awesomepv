@@ -126,30 +126,6 @@ section {
 	text-align: center;
 }
 
-.page-wrap {
-  	min-height: 100%;
-	margin-bottom: -80px; 
-}
-.page-wrap:after {
-  	content: "";
-  	display: block;
-}
-
-.site-footer, .page-wrap:after {
-	height: 80px;
-}
-
-.site-footer {
-	background: #000;
-}
-
-.site-footer p {
-	margin: 30px 0;
-	padding: 0 20px;
-	color: #aaa;
-	font-size: 12px;
-}
-
 .related {
 	padding: 15em 0 3em;
 	clear: both;
