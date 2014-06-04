@@ -122,12 +122,13 @@ section {
 	text-align: center;
 }
 
-footer {
+.blog-footer {
+	padding: 40px 0;
 	height: 80px;
 	background: #000;
 }
 
-footer p {
+.blog-footer p {
 	margin: 30px 0;
 	padding: 0 20px;
 	color: #aaa;
