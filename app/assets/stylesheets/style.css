@@ -123,10 +123,21 @@ section {
 	text-align: center;
 }
 
-.site-footer {
+.page-wrap {
+  	min-height: 100%;
+	margin-bottom: -80px; 
+}
+.page-wrap:after {
+  	content: "";
+  	display: block;
+}
+
+.site-footer, .page-wrap:after {
 	height: 80px;
+}
+
+.site-footer {
 	background: #000;
-	width: 100%;
 }
 
 .site-footer p {
