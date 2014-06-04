@@ -127,6 +127,7 @@ section {
 	bottom: 0;
 	height: 80px;
 	background: #000;
+	width: 100%;
 }
 
 .blog-footer p {
