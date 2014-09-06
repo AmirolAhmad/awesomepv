@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
   	<title>Awesome Video | <%= yield(:title) %></title>
   	<meta name="description" content="<%= yield(:description) %>" />
-	<meta name="keywords" content="9gag, tv, video, jokes, interesting, cool, fun collection, fun portfolio, admire, fun, humor, humour, just for fun, funny, prank, scary, brazil funny, sexy lady, lol" />
+	<meta name="keywords" content="9gag, tv, video, jokes, interesting, cool, fun collection, fun portfolio, admire, fun, humor, humour, just for fun, funny, prank, scary, brazil funny, sexy lady, lol, gag, meme, gif" />
 	<meta name="author" content="AwesomePV" />
 
 	<meta name='og:title' content='<%= yield(:title) %>'>
@@ -16,8 +16,8 @@
 	<meta name='og:site_name' content='Awesome Video'>
 	<meta name='og:description' content='<%= yield(:description) %>'>
 
-	<%= stylesheet_link_tag    'application', media: 'all' %>
-	<%= javascript_include_tag 'application' %>
+	<%= stylesheet_link_tag    'application', media: 'all', "data-turbolinks-track" => true %>
+	<%= javascript_include_tag 'application', "data-turbolinks-track" => true %>
 	<%= favicon_link_tag 'favicon.ico' %>
 	<script src="../assets/javascripts/modernizr.custom.js"></script>
 	<%= csrf_meta_tags %>

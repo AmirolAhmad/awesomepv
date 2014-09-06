@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-
 	before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
 	def index
@@ -29,7 +28,7 @@ class PostsController < ApplicationController
 		@post = Post.find(params[:id])
 		@post.increment!(:view_count)
 
-		@posts = Post.all.order("random()").paginate(:page => params[:page], :per_page => 8)
+		@posts = Post.all.order("rand()").paginate(:page => params[:page], :per_page => 8) #change RANDOM to RAND for localhost use
 	end
 
 	def edit
