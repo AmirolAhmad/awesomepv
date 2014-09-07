@@ -18,6 +18,11 @@ class PostsController < ApplicationController
 		@small_featured = @featured.shift(6) if @featured
 		@popular = @posts.popular
 		@latest = @posts.latest
+			
+    respond_to do |format|
+      format.html
+      format.js
+    end
 	end
 
 	def new
