@@ -10,10 +10,10 @@ class Post < ActiveRecord::Base
 
 	DISQUS_SHORTNAME = Rails.env == "development" ? "awesomevideos".freeze : "awesomevideos".freeze
 
-	default_scope -> { order('`posts`.created_at DESC') }
+	default_scope -> { order('posts.created_at DESC') }
 	scope :featured, -> { where(featured: true) }
-	scope :popular, -> { unscope(:order).order('`posts`.view_count DESC').limit(5) }
-	scope :latest, -> { order('`posts`.created_at DESC').limit(5) }
+	scope :popular, -> { unscope(:order).order('posts.view_count DESC').limit(5) }
+	scope :latest, -> { order('posts.created_at DESC').limit(5) }
 
 	scope :random, -> { unscope(:order).order('RANDOM()') } #change RANDOM to RAND when in local
 
