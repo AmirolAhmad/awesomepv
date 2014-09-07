@@ -22,6 +22,12 @@
 					<figure>
 						<div class="text">
 							<h2><%= @post.title %></h2>
+							<!-- Social Button -->
+							<div style="margin-bottom:20px;margin-top:20px;">
+						    <div class="fb-like" data-share="true" data-show-faces="false" data-layout="button" style="bottom:7px;"></div>
+						    <a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-via="awesome_pv">Tweet</a>
+						    <g:plus action="share"></g:plus>
+							</div>
 							<p><%= @post.description %></p>
 							<% if signed_in? %>
 					  	<small>
