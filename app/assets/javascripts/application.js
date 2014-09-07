@@ -20,6 +20,5 @@
 //= require jquery.jscrollpane.min.js
 //= require jquery.scrollTo-min.js
 //= require functions.js
-//= require functions_bk.js
 //= require prettyph.js
 //= require_tree .
