@@ -1,7 +1,7 @@
-$('#content').append("<%=j render(partial: 'featured', collection: @posts, format: 'html') %>");
+$('#content').append("<%=j render(partial: 'featured', collection: @featured, format: 'html') %>");
 
-<% if @posts.current_page == @posts.total_pages %>
+<% if @featured.current_page == @featured.total_pages %>
   $('#view-more').remove();
 <% else %>
-  $('#view-more a').attr('href', '<%= url_for(page: @posts.current_page + 1) %>');
+  $('#view-more a').attr('href', '<%= url_for(page: @featured.current_page + 1) %>');
 <% end %>

@@ -69,9 +69,9 @@
             </ul>
           </div>
         </div>
-        <% unless @posts.current_page == @posts.total_pages %>
+        <% unless @featured.current_page == @featured.total_pages %>
           <p id="view-more">
-            <%= link_to('View More', url_for(page: @posts.current_page + 1), :class => 'load-more hover-style') %>
+            <%= link_to('View More', url_for(page: @featured.current_page + 1), :class => 'load-more hover-style') %>
           </p>
         <% end %>
       </article>
