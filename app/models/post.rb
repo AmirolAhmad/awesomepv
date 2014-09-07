@@ -6,14 +6,14 @@ class Post < ActiveRecord::Base
 
 	belongs_to :user
 
-	self.per_page = 30
+	self.per_page = 21
 
 	DISQUS_SHORTNAME = Rails.env == "development" ? "awesomevideos".freeze : "awesomevideos".freeze
 
-	default_scope -> { order('posts.created_at DESC') }
+	default_scope -> { order('posts.created_at DESC') } #add `` to posts when in local
 	scope :featured, -> { where(featured: true) }
-	scope :popular, -> { unscope(:order).order('posts.view_count DESC').limit(5) }
-	scope :latest, -> { order('posts.created_at DESC').limit(5) }
+	scope :popular, -> { unscope(:order).order('posts.view_count DESC').limit(5) } #add `` to posts when in local
+	scope :latest, -> { order('posts.created_at DESC').limit(5) } #add `` to posts when in local
 
 	scope :random, -> { unscope(:order).order('RANDOM()') } #change RANDOM to RAND when in local
 

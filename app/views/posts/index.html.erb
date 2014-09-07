@@ -107,14 +107,10 @@
             <h2 class="h-style">STAY Connected</h2>
           </header>
           <div class="widget-bg">
-            <ul>
-              <li><a href="#" data-toggle="tooltip" title="Facebook"><img src="images/facebook.png"></a></li>
-              <li><a href="#" data-toggle="tooltip" title="Youtube"><img src="images/youtube.png"></a></li>
-              <li><a href="#" data-toggle="tooltip" title="Twitter"><img src="images/twitter.png"></a></li>
-              <li><a href="#" data-toggle="tooltip" title="Pintrest"><img src="images/pin.png"></a></li>
-              <li><a href="#" data-toggle="tooltip" title="RSS Feeds"><img src="images/rss.png"></a></li>
-              <li><a href="#" data-toggle="tooltip" title="Google Plus"><img src="images/g-plus.png"></a></li>
-            </ul>
+            <article>
+              <%= link_to "Facebook", "https://www.facebook.com/awesomePV", :class => 'signin-with fb resize hover-style', :target => '_blank' %>
+              <%= link_to "Twitter", "https://twitter.com/awesome_pv", :class => 'signin-with tw resize hover-style', :target => '_blank' %>
+            </article>
           </div>
         </div>
         <!--SOCIAL WIDGET END-->

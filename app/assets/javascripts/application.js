@@ -14,4 +14,12 @@
 //= require jquery_ujs
 //= require jquery.turbolinks
 //= require turbolinks
+//= require bootstrap.min.js
+//= require jquery.flexslider.js
+//= require jquery.jcarousel.min.js
+//= require jquery.jscrollpane.min.js
+//= require jquery.scrollTo-min.js
+//= require functions.js
+//= require functions_bk.js
+//= require prettyph.js
 //= require_tree .
