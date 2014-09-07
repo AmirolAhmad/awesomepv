@@ -1,32 +1,41 @@
 <% provide(:title, 'Sign in') %>
 
-<div class="col-md-4 col-md-offset-4">
+<section class="container">
+	<article>
+		<div class="widget-bg">
+			<div class="span4">
 
-	<div class="page-header">
-		<h2>Sign in</h2>
-	</div>
+				<header class="header-style">
+					<h2 class="h-style">Sign in</h2>
+				</header>
 
-	<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-	  <div class="form-group">
-	  	<%= f.label :email %>
-	  	<%= f.email_field :email, autofocus: true, :class => 'form-control', :placeholder => 'Email Address' %>
-	  </div>
+					<article>
+						<div class="widget-bg">
+							<div class="form">
 
-	  <div class="form-group">
-	  	<%= f.label :password %>
-	    <%= f.password_field :password, autocomplete: "off", :class => 'form-control', :placeholder => 'Password' %>
-	  </div>
+								<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-	  <% if devise_mapping.rememberable? -%>
-	  <div class="checkbox">
-	    <%= f.check_box :remember_me %> <%= f.label :remember_me %>
-	  </div>
-	  <% end -%>
+								<%= f.label :email %>
+								<%= f.email_field :email, autofocus: true, :class => 'input-block-level', :placeholder => 'Email Address' %>
 
-	  <div class="form-group">
-	  	<%= f.submit "Sign in", :class => 'btn btn-primary' %>
-	  	<%= render "devise/shared/links" %>
-	  </div>
-	<% end %>
+								<%= f.label :password %>
+								<%= f.password_field :password, autocomplete: "off", :class => 'input-block-level', :placeholder => 'Password' %>
 
-</div>
+								<% if devise_mapping.rememberable? -%>
+								<div class="checkbox">
+									<%= f.check_box :remember_me %> <%= f.label :remember_me %>
+								</div>
+								<% end -%>
+
+								<%= f.submit "Sign in", :class => 'form-btn hover-style' %><br /><br />
+								<%= render "devise/shared/links" %>
+
+								<% end %>
+
+							</div>
+						</div>
+					</article>
+			</div>
+		</div>
+	</article>
+</section>
