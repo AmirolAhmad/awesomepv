@@ -15,7 +15,7 @@ class Post < ActiveRecord::Base
 	scope :popular, -> { unscope(:order).order('`posts`.view_count DESC').limit(5) }
 	scope :latest, -> { order('`posts`.created_at DESC').limit(5) }
 
-	scope :random, -> { unscope(:order).order('RAND()') }
+	scope :random, -> { unscope(:order).order('RANDOM()') } #change RANDOM to RAND when in local
 
 	def self.search(query)
 	  where("title LIKE ?", "%#{query}%")
