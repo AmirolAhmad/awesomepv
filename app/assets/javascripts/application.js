@@ -12,11 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap.min.js
-//= require jquery.flexslider.js
-//= require jquery.jcarousel.min.js
-//= require jquery.jscrollpane.min.js
-//= require jquery.scrollTo-min.js
-//= require functions.js
-//= require prettyph.js
+//= require bootstrap.min
+//= require underscore
+//= require backbone
+//= require backbone.marionette
+//= require jquery.flexslider
+//= require jquery.jcarousel.min
+//= require jquery.jscrollpane.min
+//= require jquery.scrollTo.min
+//= require functions
+//= require prettyph
 //= require_tree .
