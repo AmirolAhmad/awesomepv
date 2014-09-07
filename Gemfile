@@ -35,6 +35,8 @@ gem 'devise'
 gem 'secure_headers'
 gem 'newrelic_rpm'
 gem 'dalli'
+gem 'marionette-rails'
+gem 'ejs'
 
 group :development do
 	gem 'spring'
