@@ -2,8 +2,20 @@ class Post < ActiveRecord::Base
 	validates :title, presence: true, length: { minimum: 5 }
 	validates :description, presence: true, length: { minimum: 5 }
 	validates :youtube_id, presence: true, length: { minimum: 5 }
+	validates :user_id, presence: true
+
+	belongs_to :user
+
+	self.per_page = 30
 
 	DISQUS_SHORTNAME = Rails.env == "development" ? "awesomevideos".freeze : "awesomevideos".freeze
+
+	default_scope -> { order('`posts`.created_at DESC') }
+	scope :featured, -> { where(featured: true) }
+	scope :popular, -> { unscope(:order).order('`posts`.view_count DESC').limit(5) }
+	scope :latest, -> { order('`posts`.created_at DESC').limit(5) }
+
+	scope :random, -> { unscope(:order).order('RAND()') }
 
 	def self.search(query)
 	  where("title LIKE ?", "%#{query}%")

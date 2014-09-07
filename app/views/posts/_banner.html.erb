@@ -1,0 +1,31 @@
+<!--Banner Start-->
+<section class="banner">
+	<div class="container">
+		<div id="slider" class="flexslider">
+			<ul class="slides">
+				<% @latest.each do |post| %>
+				<li>
+					<img src="http://i3.ytimg.com/vi/<%= post.youtube_id %>/hqdefault.jpg" alt="<%= post.title %>">
+					<div class="caption resize">
+						<h2><%= post.title %></h2>
+						<h4><a href="<%= post_path(post) %>" style="color:#ffffff;">Show me the video</a></h4>
+					</div>
+				</li>
+				<% end %>
+			</ul>
+		</div>
+		<div id="carousel" class="flexslider">
+			<ul class="slides">
+				<% @latest.each do |post| %>
+				<li>
+					<img src="http://i3.ytimg.com/vi/<%= post.youtube_id %>/mqdefault.jpg" alt="<%= post.title %>">
+					<div class="caption">
+						<a href="<%= post_path(post) %>"><%= post.title %></a>
+					</div>
+				</li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</section>
+<!--Banner End-->

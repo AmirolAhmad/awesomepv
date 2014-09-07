@@ -1,0 +1,149 @@
+<section class="banner"></section>
+
+<% if @posts.empty? %>
+<!--FEATURED VIDEOS SECTION START-->
+<section class="container">
+  <div class="widget-bg">
+    <article class="error-404">
+      <h1>404</h1>
+      <h3>ooops..... Your search turn zero</h3>
+      <p>The query that you are looking for seems to be missing. Go back, or return to home page to choose a new direction.</p>
+      <%= link_to "Back", root_path %>
+    </article>
+  </div>
+</section>
+<!--FEATURED VIDEOS SECTION END-->
+<% else %>
+
+<section class="container">
+	<div class="row">
+		<div class="span8">
+			<header class="header-style">
+				<h2 class="h-style">Search Result</h2>
+			</header>
+			<div class="widget-bg">
+				<article>
+					<ul class="videos">
+						<!--LIST ITEMS START-->
+						<% @posts.each do |post| %>
+						<li>
+							<figure>
+								<div class="thumb">
+									<a href="<%= post_path(post) %>">
+										<img src="http://i3.ytimg.com/vi/<%= post.youtube_id %>/hqdefault.jpg" alt="<%= post.title %>">
+									</a>
+									<div class="play">
+										<a rel="prettyPhoto" href="//www.youtube.com/watch?v=<%= post.youtube_id %>?rel=0&showinfo=0&iv_load_policy=3&autoplay=1&vq=hd720">
+											<%= image_tag('play.png', :alt => 'post.title') %>
+										</a>
+									</div>
+								</div>
+								<figcaption>
+									<h5><%= post.title %></h5>
+									<ul class="views">
+										<li><%= post.created_at.strftime("%d %B %Y") %></li>
+										<li><i class="fa fa-eye"></i></i><%= post.view_count %></li>
+									</ul>
+								</figcaption>
+							</figure>
+						</li>
+						<% end %>
+						<!--LIST ITEMS END-->
+					</ul>
+				</article>
+			</div>
+		</div>
+		<!--SIDEBAR START-->
+		<aside class="span4">
+			<div class="side-bar">
+				<!--LOGIN WIDGET START-->
+				<div class="widget login-widget">
+				</div>
+				<!--LOGIN WIDGET END-->
+				<!--SEARCH WIDGET START-->
+				<div class="widget search-widget">
+					<header class="header-style">
+						<h2 class="h-style">Search</h2>
+					</header>
+					<div class="widget-bg">
+						<%= form_tag(posts_path, method: "get", class: 'form-search') do %>
+              <%= text_field_tag(:q, params[:search], class: 'input-medium search-query') %>
+              <button type="submit" class="hover-style">Search</button>
+            <% end %>
+					</div>
+				</div>
+				<!--SEARCH WIDGET END-->
+				<!--SOCIAL WIDGET START-->
+        <div class="widget tabs-widget">
+          <ul class="nav nav-tabs" id="myTab">
+            <li class="active"><a href="#recent">Latest</a></li>
+            <li><a href="#papular">Popular</a></li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" id="recent">
+              <div class="small-thumbs">
+                <ul>
+                  <!--LIST ITEMS START-->
+                  <% @latest.each do |post| %>
+                  <li>
+                    <figure>
+                      <div class="thumb">
+                        <a href="<%= post_path(post) %>">
+                          <img src="http://i3.ytimg.com/vi/<%= post.youtube_id %>/default.jpg" alt="">
+                        </a>
+                        <div class="play">
+                          <a rel="prettyPhoto" href="//www.youtube.com/watch?v=<%= post.youtube_id %>?rel=0&showinfo=0&iv_load_policy=3&autoplay=1&vq=hd720">
+                          	<%= image_tag('play2.png', :alt => "post.title") %>
+                          </a>
+                        </div>
+                      </div>
+                      <figcaption>
+                        <p><%= truncate post.description, :length => 110 %></p>
+                        <p class="color"><%= post.created_at.strftime("%d %b %Y") %></p>
+                      </figcaption>
+                    </figure>
+                  </li>
+                  <% end %>
+                  <!--LIST ITEMS END-->
+                </ul>
+              </div>
+            </div>
+            <div class="tab-pane" id="papular">
+              <div class="small-thumbs">
+                <ul>
+                  <!--LIST ITEMS START-->
+                  <% @popular.each do |post| %>
+                  <li>
+                    <figure>
+                      <div class="thumb">
+                        <a href="<%= post_path(post) %>">
+                          <img src="http://i3.ytimg.com/vi/<%= post.youtube_id %>/default.jpg" alt="">
+                        </a>
+                        <div class="play">
+                          <a rel="prettyPhoto" href="//www.youtube.com/watch?v=<%= post.youtube_id %>?rel=0&showinfo=0&iv_load_policy=3&autoplay=1&vq=hd720">
+                          	<%= image_tag('play2.png', :alt => "post.title") %>
+                          </a>
+                        </div>
+                      </div>
+                      <figcaption>
+                        <p><%= truncate post.description, :length => 110 %></p>
+                        <p class="color"><%= post.created_at.strftime("%d %b %Y") %></p>
+                      </figcaption>
+                    </figure>
+                  </li>
+                  <% end %>
+                  <!--LIST ITEMS END-->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--SOCIAL WIDGET END-->
+      </div>
+    </aside>
+    <!--SIDEBAR END-->
+  </div>
+</section>
+<!--FEATURED VIDEOS SECTION END-->
+
+<% end %>
