@@ -16,6 +16,7 @@
 //= require underscore
 //= require backbone
 //= require backbone.marionette
+//= require backbone/awesomepv
 //= require jquery.flexslider
 //= require jquery.jcarousel.min
 //= require jquery.jscrollpane.min
