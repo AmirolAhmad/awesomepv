@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
 
 	belongs_to :user
 
-	self.per_page = 27
+	self.per_page = 21
 
 	DISQUS_SHORTNAME = Rails.env == "development" ? "awesomevideos".freeze : "awesomevideos".freeze
 

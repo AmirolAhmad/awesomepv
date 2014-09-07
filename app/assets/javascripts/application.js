@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap.min.js
-//= require infinite-scroll.js
 //= require jquery.flexslider.js
 //= require jquery.jcarousel.min.js
 //= require jquery.jscrollpane.min.js

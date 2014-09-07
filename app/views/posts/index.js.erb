@@ -1,7 +1,0 @@
-$('#content').append("<%=j render(partial: 'featured', collection: @featured, format: 'html') %>");
-
-<% if @featured.current_page == @featured.total_pages %>
-  $('#view-more').remove();
-<% else %>
-  $('#view-more a').attr('href', '<%= url_for(page: @featured.current_page + 1) %>');
-<% end %>
