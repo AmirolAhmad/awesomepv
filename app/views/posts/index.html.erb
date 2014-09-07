@@ -49,7 +49,7 @@
                   <h5><%= post.title %></h5>
                   <ul class="views">
                     <li><%= post.created_at.strftime("%d %B %Y") %></li>
-                    <li><i class="fa fa-eye"></i><%= post.view_count %></li>
+                    <li><i class="fa fa-eye"></i><%= post.view_count %> views</li>
                   </ul>
                 </figcaption>
               </figure>
@@ -76,8 +76,7 @@
                     </div>
                   </div>
                   <figcaption>
-                    <p><%= truncate post.description, :length => 35 %></p>
-                    <p class="color"><%= post.created_at.strftime("%d %b %Y") %></p>
+                    <h5><%= truncate post.title, :length => 35 %></h5>
                   </figcaption>
                 </figure>
               </li>
@@ -140,8 +139,7 @@
                         </div>
                       </div>
                       <figcaption>
-                        <p><%= truncate post.description, :length => 110 %></p>
-                        <p class="color"><%= post.created_at.strftime("%d %b %Y") %></p>
+                        <h5><%= post.title %></h5>
                       </figcaption>
                     </figure>
                   </li>
@@ -168,8 +166,7 @@
                         </div>
                       </div>
                       <figcaption>
-                        <p><%= truncate post.description, :length => 110 %></p>
-                        <p class="color"><%= post.created_at.strftime("%d %b %Y") %></p>
+                        <h5><%= post.title %></h5>
                       </figcaption>
                     </figure>
                   </li>
