@@ -11,9 +11,7 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
 //= require bootstrap.min.js
 //= require jquery.flexslider.js
 //= require jquery.jcarousel.min.js

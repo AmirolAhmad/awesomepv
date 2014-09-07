@@ -9,8 +9,8 @@
 	<meta name="keywords" content="9gag, tv, video, jokes, interesting, cool, fun collection, fun portfolio, admire, fun, humor, humour, just for fun, funny, prank, scary, brazil funny, sexy lady, lol, gag, meme, gif" />
 	<meta name="author" content="AwesomePV" />
 
-	<%= stylesheet_link_tag    'application', media: 'all', "data-turbolinks-track" => true %>
-	<%= javascript_include_tag 'application', "data-turbolinks-track" => true %>
+	<%= stylesheet_link_tag    'application' %>
+	<%= javascript_include_tag 'application' %>
 	<%= favicon_link_tag 'favicon.ico' %>
 	
 	<%= csrf_meta_tags %>
@@ -19,6 +19,7 @@
 
 </head>
 <body>
+	<%= render partial: "social" %>
 	<div id="fb-root"></div>
 	<%= render partial: "header" %>
 
