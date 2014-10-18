@@ -1,0 +1,46 @@
+<!-- Footer -->
+<footer id="apvFooter">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-4 col-md-4">
+        <div class="pull-left">
+          <ul class="list-inline nomar">
+            <li class="m-r-md nopad"><a href="">Contact Us</a></li>
+            <li class="m-r-md nopad"><a href="">Subscribe to our Newsletter</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-xs-4 col-md-2 col-md-offset-2">
+        <div class="back-top" title="Top of Page">
+          <span class="glyphicon glyphicon-arrow-up"></span> Back to top
+        </div>
+      </div>
+      <div class="col-xs-4 col-md-4">
+        <div class="pull-right">
+          Copyright 2014. All right reserved
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Footer End -->
+
+<script type="text/javascript">
+$(function () {
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 200) {
+            $('.back-top').fadeIn();
+        } else {
+            $('.back-top').fadeOut();
+        }
+    });
+
+    // scroll body to 0px on click
+    $('.back-top').click(function () {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 1600);
+        return false;
+    });
+});
+</script>

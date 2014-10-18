@@ -1,14 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Awesomepv</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Awesome Picture & Video">
+  <meta name="keywords" content="9gag, tv, video, jokes, interesting, cool, fun collection, fun portfolio, admire, fun, humor, humour, just for fun, funny, prank, scary, brazil funny, sexy lady, lol, gag, meme, gif">
+  <meta name="author" content="AwesomePV">
+  <title>Awesome Picture & Video</title>
+
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Awesome Picture & Video"/>
+  <meta property="og:url" content="<%= request.url %>"/>
+  <meta property="og:image" content="<%= image_url('logo.png') %>"/>
+  <meta property="og:description" content="Awesome Picture & Video" />
+  <meta property="og:site_name" content="Awesome Picture & Video"/>
+  <link rel="canonical" href="<%= request.url %>" />
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+<div class="container">
+  <%= render partial: "header" %>
+  <%= yield %>
+</div>
+  <%= render partial: "footer" %>
 
 </body>
 </html>
