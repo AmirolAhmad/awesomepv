@@ -1,0 +1,7 @@
+site_domain: awesomepv.dev
+google_analytics_tracker: #UA-53563177-1
+s3:
+  bucket: #signature-bravo-dev-staging
+  region: #ap-southeast-1
+image_host: #https://signature-bravo-dev-staging.s3.amazonaws.com
+fb_app_id: #727607077287608
