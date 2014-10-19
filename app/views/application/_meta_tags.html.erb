@@ -1,0 +1,18 @@
+<% og_description ||= "" %>
+<% og_title ||= "" %>
+<% og_type ||= "" %>
+<% og_url ||= "" %>
+<% og_image ||= "" %>
+
+<% image_url ||= image_path('signature@2x.png') %>
+<meta property="og:type" content="<%= !og_type.blank? ? og_type : 'website'%>" />
+<meta property="og:title" content="<%= !og_title.blank? ? og_title : title %>"/>
+<meta property="og:url" content="<%= !og_url.blank? ? og_url : request.url %>"/>
+<meta property="og:image" content="<%= !og_image.blank? ? og_image : image_url('logo.png') %>"/>
+<meta property="og:description" content="<%= !og_description.blank? ? og_description : description %>" />
+<meta property="og:site_name" content="awesomepv.com"/>
+<meta name="title" content="<%= title %>"/>
+<meta name="description" content="<%= description %>" />
+<link rel="canonical" href="<%= canonical %>" />
+
+<%= favicon_link_tag image_path('favicon.png'), :rel => 'apple-touch-icon shortcut icon', :type => 'image/png' %>

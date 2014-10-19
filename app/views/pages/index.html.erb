@@ -1,3 +1,19 @@
+<% content_for :title do %>
+  Awesome Picture & Video
+<% end %>
+<% content_for :meta_tags do %>
+  <%= render :partial => 'application/meta_tags',
+             :locals => {
+                  :type => "website",
+                  :title => "Awesome Picture & Video",
+                  :url => request.url,
+                  :description => "Awesome Picture & Video",
+                  :canonical => request.url,
+                  :og_title => "Awesome Picture & Video",
+                  :og_description => "Awesome Picture & Video"
+             } %>
+<% end %>
+
 <!-- Carousel -->
 <div id="latest" class="carousel slide" data-ride="carousel">
 
@@ -37,8 +53,8 @@
     <div class="col-md-3 col-sm-6 col-xs-6">
       <%= link_to video_path(video) do %>
       <img src="http://i3.ytimg.com/vi/<%= video.youtube_id %>/maxresdefault.jpg" alt="" class="img-responsive">
-      <% end %>
       <h4><%= video.title %></h4>
+      <% end %>
       <p class="small">Published on <%= video.published_at.strftime("%d %B %Y") %></p>
     </div>
     <% end %>

@@ -1,3 +1,20 @@
+<% content_for :title do %>
+  <%= "#{@video.try(:title)}" %> - Awesome Picture & Video
+<% end %>
+<% content_for :meta_tags do %>
+  <%= render :partial => 'application/meta_tags',
+             :locals => {
+                  :type => "website",
+                  :title => "#{@video.try(:title)}",
+                  :url => request.url,
+                  :description => "#{@video.try(:description)}",
+                  :canonical => request.url,
+                  :og_title => "#{@video.try(:title)}",
+                  :og_description => "#{@video.try(:description)}",
+                  :og_image => "//www.youtube.com/embed/#{@video.try(:youtube_id)}?rel=0&showinfo=0&iv_load_policy=3&autoplay=1&vq=hd720"
+             } %>
+<% end %>
+
 <!-- Latest Videos -->
 <div id="latestVideos">
 <!-- Video 1 -->

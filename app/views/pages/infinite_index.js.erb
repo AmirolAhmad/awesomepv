@@ -4,6 +4,6 @@ if (<%= @videos.count > 0 %>){
     $('.js-page').replaceWith('<%= j will_paginate(@videos, { page_links: false, class: "pagination js-page"}) %>');
   <% else %>
     $('.js-page').remove();
-    $('#js-trailing-stories').append($("<div class='itemPost col-xs-12 m-v-lg'><h1 class='text-center'>- FIN -</h1></div>"));
+    $('#js-trailing-stories').append($("<h1 class='text-center'>- END -</h1>"));
   <% end %>
 }
