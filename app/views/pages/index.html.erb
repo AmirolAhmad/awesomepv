@@ -47,10 +47,14 @@
 
 <div class="separator m-v-lg"></div>
 
-<%= render partial: 'index_video', collection: @published_only %>
+<div class="row" id="js-trailing-stories">
+  <%= render partial: 'index_video', collection: @published_only %>
+</div>
 
+<%= will_paginate(@videos, { page_links: false, class: "pagination js-page"}) %>
 
-
-<%= will_paginate @videos %>
+<script type="text/javascript">
+  SigInfinite.setup({sort: "<%= params[:sort] %>"});
+</script>
 
 
