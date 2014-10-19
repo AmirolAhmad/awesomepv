@@ -39,7 +39,7 @@
           <div class="col-md-6">
             <div class="form-group">
               <%= f.label :source, "Source From" %>
-              <%= f.text_field :source, :class => "form-control" %>
+              <%= f.select(:source, options_for_select([['Youtube', 'Youtube'], ['Vimeo', 'Vimeo']], 'Youtube'), {}, {:class => "form-control"}) %>
             </div>
           </div>
         </div>
@@ -47,7 +47,7 @@
           <div class="col-md-12">
             <div class="checkbox">
               <label>
-              <%= f.check_box :featured, :type => 'checkbox' %> Tick to mark this video as featured
+              <%= f.check_box :featured, :type => 'checkbox' %> Mark this video as featured
               </label>
             </div>
           </div>
