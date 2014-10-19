@@ -13,7 +13,7 @@ class Video < ActiveRecord::Base
   scope :published, -> { where('state = ?', 'published').unscope(:order).order('`videos`.published_at DESC') }
   scope :featured, -> { where(featured: true) }
   scope :published_only, -> { where('featured IS NOT TRUE') }
-  scope :random_video, -> { order('RAND()').limit(4) }
+  scope :random, -> { unscope(:order).order('RAND()') }
 
   protected
 

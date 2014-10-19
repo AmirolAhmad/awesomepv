@@ -1,33 +1,65 @@
-<%= form_for :video, url: videos_path, method: :post do |f| %>
-
-<div class="form-group">
-  <%= f.label :title, "Video Title" %>
-  <%= f.text_field :title, :class => "form-control" %>
+<div class="page-header">
+  <h1>New Video <small>Create your new video here.</small></h1>
 </div>
 
-<div class="form-group">
-  <%= f.label :description, "Video Description" %>
-  <%= f.text_field :description, :class => "form-control" %>
+<div class="row">
+  <div class="col-md-4">
+    <%= render partial: "sidebar" %>
+  </div>
+  <div class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Video Details</h3>
+      </div>
+      <%= form_for :video, url: videos_path, method: :post do |f| %>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <%= f.label :title, "Video Title" %>
+              <%= f.text_field :title, :class => "form-control" %>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <%= f.label :description, "Video Description" %>
+              <%= f.text_area :description, :class => "form-control", :rows => 4 %>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <%= f.label :youtube_id, "Youtube ID" %>
+              <%= f.text_field :youtube_id, :class => "form-control" %>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <%= f.label :source, "Source From" %>
+              <%= f.text_field :source, :class => "form-control" %>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="checkbox">
+              <label>
+              <%= f.check_box :featured, :type => 'checkbox' %> Tick to mark this video as featured
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel-footer">
+        <div class="form-group">
+          <%= f.submit "Save", :class => "btn btn-primary" %>
+          <%= link_to 'Cancel', videos_path, :class => "btn btn-link" %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
 </div>
-
-<div class="form-group">
-  <%= f.label :source, "Source From" %>
-  <%= f.text_field :source, :class => "form-control" %>
-</div>
-
-<div class="form-group">
-  <%= f.label :youtube_id, "Youtube ID" %>
-  <%= f.text_field :youtube_id, :class => "form-control" %>
-</div>
-
-<div class="form-group">
-  <%= f.label :featured, "Featured Video ?" %>
-  <%= f.check_box :featured, :type => 'checkbox' %>
-</div>
-
-<div class="form-group">
-  <%= f.submit "Save", :class => "btn btn-primary" %>
-  <%= link_to 'Cancel', videos_path, :class => "btn btn-link" %>
-</div>
-
-<% end %>

@@ -41,7 +41,7 @@
           <%= link_to "Suggest a Video", "#suggest" %>
         </li>
         <li>
-          <%= link_to "Submit a Video", "#submit" %>
+          <%= link_to 'Submit New Video', new_video_path %>
         </li>
         <% if user_signed_in? %>
         <li><%= link_to 'My Profile', account_path %></li>

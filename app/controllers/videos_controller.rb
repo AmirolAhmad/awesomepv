@@ -31,6 +31,9 @@ class VideosController < ApplicationController
 
   def show
     @video = Video.find(params[:id])
+
+    @videos = Video.all.limit(4)
+    @random = @videos.random
   end
 
   def edit
