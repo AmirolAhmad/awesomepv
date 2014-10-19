@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141019072838) do
+ActiveRecord::Schema.define(version: 20141019132659) do
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -62,5 +62,22 @@ ActiveRecord::Schema.define(version: 20141019072838) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
+
+  create_table "videos", force: true do |t|
+    t.integer  "user_id",      null: false
+    t.string   "title"
+    t.text     "description"
+    t.string   "source"
+    t.string   "youtube_id"
+    t.boolean  "featured"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "deleted_at"
+    t.string   "slug"
+    t.string   "state"
+    t.datetime "published_at"
+  end
+
+  add_index "videos", ["deleted_at"], name: "index_videos_on_deleted_at", using: :btree
 
 end

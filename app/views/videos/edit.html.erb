@@ -1,0 +1,8 @@
+<%= form_for :video, url: video_path(@video), method: :patch do |f| %>
+
+<%= f.label :title, "Video Title" %>
+<%= f.text_field :title, :class => "form-control" %>
+
+<%= f.submit "Save", :class => "btn btn-primary" %>
+
+<% end %>

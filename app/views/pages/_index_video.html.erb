@@ -1,0 +1,15 @@
+<!-- Latest Videos -->
+<div id="latestVideos">
+<!-- Video 1 -->
+<h3><%= index_video.title %></h3>
+<div class="metaDetails">
+  <p>413 people views this video</p>
+  <span>Source</span><span2><%= index_video.source %></span2>
+</div>
+<img src="http://i3.ytimg.com/vi/<%= index_video.youtube_id %>/maxresdefault.jpg" alt="" class="img-responsive">
+<p class="text-justify"><%= index_video.description %></p>
+<%= link_to "View this video", video_path(index_video), :class => "btn btn-primary btn-sm" %>
+
+<div class="separator m-v-lg"></div>
+</div>
+<!-- Latest Videos End -->

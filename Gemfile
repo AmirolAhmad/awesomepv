@@ -34,6 +34,7 @@ gem 'devise'
 gem 'friendly_id'
 gem 'paranoia'
 gem 'dalli'
+gem 'will_paginate'
 
 # bundle exec rake doc:rails generates the API under doc/api.
 group :doc do

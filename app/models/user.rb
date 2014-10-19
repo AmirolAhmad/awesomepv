@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   friendly_id :username, use: [:slugged, :finders, :history]
 
   has_one :profile, dependent: :destroy
+  has_many :videos, dependent: :destroy
   accepts_nested_attributes_for :profile, update_only: true, allow_destroy: true
 
   validates :username, :uniqueness => { :case_sensitive => false }

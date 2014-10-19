@@ -16,4 +16,8 @@ class ApplicationController < ActionController::Base
     params.require(:user).permit(:id, :username, :email,
       profile_attributes: [:id, :user_id, :full_name, :facebook_id])
   end
+
+  def video_params
+    params.require(:video).permit(:id, :user_id, :title, :description, :source, :youtube_id, :featured)
+  end
 end

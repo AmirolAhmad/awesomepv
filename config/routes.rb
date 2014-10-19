@@ -11,10 +11,12 @@ Rails.application.routes.draw do
     get "/" => "dashboards#index", as: 'master'
     resources :dashboards, only: [:index]
     resources :users do
+      resources :videos
     end
   end
 
   resource :account, only: [:show, :edit, :update]
+  resources :videos
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
