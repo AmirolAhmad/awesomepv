@@ -7,6 +7,15 @@ Rails.application.routes.draw do
   end
   get 'pages/index'
 
+  namespace :admin, path: '/master' do
+    get "/" => "dashboards#index", as: 'master'
+    resources :dashboards, only: [:index]
+    resources :users do
+    end
+  end
+
+  resource :account, only: [:show, :edit, :update]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

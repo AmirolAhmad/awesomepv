@@ -1,0 +1,52 @@
+<div class="page-header">
+  <h1>User Details <small>Manage <%= @user.username %> account details here.</small></h1>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <%= render partial: "sidebar" %>
+  </div>
+  <div class="col-md-8">
+    <!-- Client Details -->
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          User Details
+          <%= link_to edit_admin_user_path, :class => "pull-right btn btn-primary btn-xs", :style => "color:#ffffff;", "data-toggle" => "tooltip", :title => "Edit user detail" do %>
+          <span class="glyphicon glyphicon-edit"></span>
+          <% end %>
+        </h3>
+      </div>
+      <div class="panel-body">
+    
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Email address</label>
+              <p><%= @user.email %></p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Full Name</label>
+              <p><%= @user.profile.try(:full_name).empty? ? "N/A" : @user.profile.try(:full_name) %></p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Facebook ID</label>
+              <p><%= @user.profile.try(:facebook_id).empty? ? "N/A" : @user.profile.try(:facebook_id) %> <%= link_to "Open", "https://www.facebook.com/" + @user.profile.try(:facebook_id), :target => "_blank" %></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="panel-footer">
+        <%= link_to "Back", admin_users_path, :class => "btn btn-default" %>
+      </div>
+    </div>
+
+  </div>
+</div>

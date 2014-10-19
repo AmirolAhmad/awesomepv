@@ -30,11 +30,13 @@
           <span class="glyphicon glyphicon-home"></span>
           <% end %>
         </li>
+        <% if current_user.try(:admin) %>
         <li>
-          <%= link_to "/master" do %>
+          <%= link_to admin_master_path do %>
           <span class="glyphicon glyphicon-lock"></span>
           <% end %>
         </li>
+        <% end %>
         <li>
           <%= link_to "Suggest a Video", "#suggest" %>
         </li>
@@ -42,6 +44,7 @@
           <%= link_to "Submit a Video", "#submit" %>
         </li>
         <% if user_signed_in? %>
+        <li><%= link_to 'My Profile', account_path %></li>
         <li>
           <%= link_to 'Logout', destroy_user_session_path, method: "delete" %>
         </li>

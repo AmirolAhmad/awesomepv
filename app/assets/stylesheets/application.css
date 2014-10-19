@@ -13,5 +13,7 @@
  *= require_self
  *= require_tree .
  *= require style
+ *= require jquery.dataTables
+ *= require dataTables.bootstrap
  *= require bootstrap
  */
