@@ -21,9 +21,10 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="<%= body_class %>" data-user="<%= h current_user.try(:to_json) %>">
 <div class="container">
   <%= render partial: "header" %>
+  <%= render 'layouts/messages' %>
   <%= yield %>
 </div>
   <%= render partial: "footer" %>

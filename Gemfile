@@ -30,6 +30,10 @@ gem 'jquery-turbolinks'
 gem 'jbuilder', '~> 2.0'
 
 gem 'rails_config'
+gem 'devise'
+gem 'friendly_id'
+gem 'paranoia'
+gem 'dalli'
 
 # bundle exec rake doc:rails generates the API under doc/api.
 group :doc do
@@ -39,6 +43,8 @@ end
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 group :development do
 	gem 'spring'
+	gem 'letter_opener'
+	gem 'quiet_assets'
 end
 
 # Use ActiveModel has_secure_password
