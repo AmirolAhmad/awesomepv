@@ -11,7 +11,7 @@
 <%= link_to video_path(index_video) do %>
 <img src="http://i3.ytimg.com/vi/<%= index_video.youtube_id %>/maxresdefault.jpg" alt="" class="img-responsive">
 <% end %>
-<p class="text-justify"><%= index_video.description %></p>
+<p class="text-justify"><%=h truncate(index_video.description, :length => 220) %></p>
 <%= link_to "View this video", video_path(index_video), :class => "btn btn-primary btn-sm" %>
 
 <div class="separator m-v-lg"></div>

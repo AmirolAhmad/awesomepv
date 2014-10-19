@@ -29,7 +29,7 @@
 <div class="metaDetails">
   <p class="small">Published on <%= @video.published_at.strftime("%d %B %Y") %> by <%= @video.user.profile.full_name %></p>
 </div>
-<p class="text-justify"><%= @video.description %></p>
+<p class="text-justify"><%=h @video.description %></p>
 
 </div>
 <!-- Latest Videos End -->
