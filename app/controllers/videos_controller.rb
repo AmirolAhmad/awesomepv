@@ -31,6 +31,10 @@ class VideosController < ApplicationController
 
   def show
     @video = Video.find(params[:id])
+    respond_to do |format|
+      format.html { @video }
+      format.json { render json: @video.to_json(include: [:user]) }
+    end
 
     @videos = Video.all.limit(4)
     @random = @videos.random
