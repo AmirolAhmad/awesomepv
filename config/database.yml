@@ -48,7 +48,4 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: awesomepv_production
-  username: 
-  password:
+  url: <%= ENV['DATABASE_URL'] %>
