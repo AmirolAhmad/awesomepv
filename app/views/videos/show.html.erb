@@ -50,7 +50,7 @@
     <% @random.each do |video| %>
     <div class="col-md-3 col-sm-6 col-xs-6">
       <%= link_to watch_path(video) do %>
-      <img src="http://i3.ytimg.com/vi/<%= video.youtube_id %>/maxresdefault.jpg" alt="" class="img-responsive">
+      <img src="http://i3.ytimg.com/vi/<%= video.youtube_id %>/sddefault.jpg" alt="" class="img-responsive">
       <% end %>
       <h4><%= video.title %></h4>
       <p class="small">Published on <%= video.published_at.strftime("%d %B %Y") %></p>
