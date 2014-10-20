@@ -13,6 +13,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <%= yield :meta_tags %>
+  <%= render "analytics" %>
 </head>
 <body class="<%= body_class %>" data-user="<%= h current_user.try(:to_json) %>">
 <div class="container">
