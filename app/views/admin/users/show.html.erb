@@ -29,7 +29,7 @@
           <div class="col-md-6">
             <div class="form-group">
               <label>Full Name</label>
-              <p><%= @user.profile.try(:full_name).empty? ? "N/A" : @user.profile.try(:full_name) %></p>
+              <p><%= @user.profile.try(:full_name).blank? ? "N/A" : @user.profile.try(:full_name) %></p>
             </div>
           </div>
         </div>
@@ -37,7 +37,7 @@
           <div class="col-md-6">
             <div class="form-group">
               <label>Facebook ID</label>
-              <p><%= @user.profile.try(:facebook_id).empty? ? "N/A" : @user.profile.try(:facebook_id) %> <%= link_to "Open", "https://www.facebook.com/" + @user.profile.try(:facebook_id), :target => "_blank" %></p>
+              <p><%= @user.profile.try(:facebook_id).blank? ? "N/A" : @user.profile.try(:facebook_id) %> <%= link_to "Open", "https://www.facebook.com/" + @user.profile.try(:facebook_id).to_s, :target => "_blank" %></p>
             </div>
           </div>
         </div>
