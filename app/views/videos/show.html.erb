@@ -11,7 +11,7 @@
                   :canonical => request.url,
                   :og_title => "#{@video.try(:title)}",
                   :og_description => "#{@video.try(:description)}",
-                  :og_image => "//www.youtube.com/embed/#{@video.try(:youtube_id)}?rel=0&showinfo=0&iv_load_policy=3&autoplay=1&vq=hd720"
+                  :og_image => "http://i3.ytimg.com/vi/#{@video.try(:youtube_id)}/maxresdefault.jpg"
              } %>
 <% end %>
 
