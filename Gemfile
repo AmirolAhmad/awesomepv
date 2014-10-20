@@ -37,6 +37,7 @@ gem 'dalli'
 gem 'will_paginate'
 gem 'memcachier'
 gem 'newrelic_rpm'
+gem "intercom-rails"
 
 # bundle exec rake doc:rails generates the API under doc/api.
 group :doc do
