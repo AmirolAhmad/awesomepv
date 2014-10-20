@@ -40,10 +40,14 @@
         <li>
           <%= link_to 'Submit New Video', new_video_path %>
         </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right nomar">
         <% if user_signed_in? %>
         <li><%= link_to 'My Profile', account_path %></li>
         <li>
-          <%= link_to 'Logout', destroy_user_session_path, method: "delete" %>
+          <%= link_to destroy_user_session_path, method: "delete" do %>
+          <span class="glyphicon glyphicon-log-out"></span>
+          <% end %>
         </li>
         <% else %>
         <li>
@@ -54,12 +58,14 @@
         </li>
         <% end %>
       </ul>
+      <!--
       <form class="navbar-form navbar-right hidden-xs" role="search">
         <div class="form-group">
           <span class="glyphicon glyphicon-search"></span>
           <input type="text" class="form-control">
         </div>
       </form>
+      -->
     </div>
   </nav>
 </div>
