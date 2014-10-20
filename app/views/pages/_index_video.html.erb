@@ -9,7 +9,7 @@
   <p><%= index_video.views %> people views this video</p>
 </div>
 <%= link_to watch_path(index_video) do %>
-<img src="http://i3.ytimg.com/vi/<%= index_video.youtube_id %>/sddefault.jpg" style="width:960px;height:500px;" alt="" class="img-responsive">
+<img src="http://i3.ytimg.com/vi/<%= index_video.youtube_id %>/maxresdefault.jpg" alt="" class="img-responsive">
 <% end %>
 <p class="text-justify"><%=h truncate(index_video.description, :length => 220) %></p>
 <%= link_to "View this video", watch_path(index_video), :class => "btn btn-primary btn-sm" %>
