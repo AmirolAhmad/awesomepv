@@ -35,6 +35,7 @@ gem 'friendly_id'
 gem 'paranoia'
 gem 'dalli'
 gem 'will_paginate'
+gem 'memcachier'
 
 # bundle exec rake doc:rails generates the API under doc/api.
 group :doc do
