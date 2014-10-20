@@ -48,31 +48,7 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  url: <%= ENV['DATABASE_URL'] %>
-
-
-
-
-development:
-  adapter: mysql2
-  database: awesomepv_development
-  username: root
-  password:
-  pool: 5
-  timeout: 5000
-
-test:
-  adapter: mysql2
-  pool: 5
-  database: awesomepv_test
-  username: root
-  password:
-  pool: 5
-  timeout: 5000
-
-production:
-  adapter: mysql2
+  <<: *default
   database: awesomepv_production
   username: 
-  password: 
-  pool: 5
+  password:
