@@ -33,7 +33,7 @@
 </div>
 
 <div class="metaDetails">
-  <p class="small">Published on <%= @video.published_at.strftime("%d %B %Y") %> by <%= @video.user.username %></p>
+  <p class="small">Published on <%= @video.published_at.strftime("%d %B %Y") %> by <%= @video.user.username.upcase %></p>
 </div>
 <p class="text-justify"><%=h @video.description %></p>
 
