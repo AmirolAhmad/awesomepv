@@ -13,11 +13,26 @@
       </div>
       <%= form_for :video, url: admin_user_video_path, method: :patch do |f| %>
       <div class="panel-body">
+
+        <% if @video.errors.any? %>
+        <div class="alert alert-danger alert-dismissable">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          <strong><%= pluralize(@video.errors.count, "error") %> prohibited
+            this video from being saved:</strong>
+            <ul>
+              <% @video.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+              <% end %>
+            </ul>
+        </div>
+        <% end %>
+        
         <div class="row">
           <div class="col-md-12">
             <div class="form-group">
               <%= f.label :title, "Video Title" %>
               <%= f.text_field :title, :class => "form-control" %>
+              <p class="small help-block">Not more than 240 characters.</p>
             </div>
           </div>
         </div>
@@ -26,6 +41,7 @@
             <div class="form-group">
               <%= f.label :description, "Video Description" %>
               <%= f.text_area :description, :class => "form-control", :rows => 4 %>
+              <p class="small help-block">Not more than 500 characters.</p>
             </div>
           </div>
         </div>
@@ -34,6 +50,7 @@
             <div class="form-group">
               <%= f.label :youtube_id, "Youtube ID" %>
               <%= f.text_field :youtube_id, :class => "form-control" %>
+              <p class="small help-block">Make sure you just copy the Youtube ID (details).</p>
             </div>
           </div>
           <div class="col-md-6">

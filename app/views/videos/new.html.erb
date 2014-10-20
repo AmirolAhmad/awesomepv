@@ -13,11 +13,26 @@
       </div>
       <%= form_for :video, url: videos_path, method: :post do |f| %>
       <div class="panel-body">
+
+        <% if @video.errors.any? %>
+        <div class="alert alert-danger alert-dismissable">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          <strong><%= pluralize(@video.errors.count, "error") %> prohibited
+            this video from being saved:</strong>
+            <ul>
+              <% @video.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+              <% end %>
+            </ul>
+        </div>
+        <% end %>
+
         <div class="row">
           <div class="col-md-12">
             <div class="form-group">
               <%= f.label :title, "Video Title" %>
               <%= f.text_field :title, :class => "form-control" %>
+              <p class="small help-block">Not more than 240 characters.</p>
             </div>
           </div>
         </div>
@@ -26,6 +41,7 @@
             <div class="form-group">
               <%= f.label :description, "Video Description" %>
               <%= f.text_area :description, :class => "form-control", :rows => 4 %>
+              <p class="small help-block">Not more than 500 characters.</p>
             </div>
           </div>
         </div>
@@ -34,6 +50,9 @@
             <div class="form-group">
               <%= f.label :youtube_id, "Youtube ID" %>
               <%= f.text_field :youtube_id, :class => "form-control" %>
+              <p class="small help-block">
+                <a href="" class="btn-primary" data-toggle="modal" data-target="#instruction">Make sure you just copy the Youtube ID (click here for more details)</a>
+              </p>
             </div>
           </div>
           <div class="col-md-6">
@@ -60,6 +79,27 @@
         </div>
       </div>
       <% end %>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="instruction" tabindex="-1" role="dialog" aria-labelledby="instruction" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Instruction</h4>
+      </div>
+      <div class="modal-body">
+        <p><%= image_tag('vid-instruction.png', :alt => "Youtube ID Instruction", :class => 'img-responsive') %></p>
+        <p>So what you need is to copy the youtube id <strong>AFTER</strong> v=</p>
+        <p class="lead">For example:</p>
+        <p>Youtube URL is <strong>http://www.youtube.com/watch?v=7n4kXwjDquI</strong> so what you need is the youtube id which is <strong>7n4kXwjDquI</strong></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">I Understand</button>
+      </div>
     </div>
   </div>
 </div>

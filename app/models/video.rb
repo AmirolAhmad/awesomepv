@@ -7,6 +7,10 @@ class Video < ActiveRecord::Base
 
   belongs_to :user, foreign_key: :user_id
 
+  validates :title, length: { maximum: 240 }, presence: true
+  validates :description, length: { maximum: 500 }, allow_blank: true
+  validates :youtube_id, presence: true, uniqueness: true
+
   self.per_page = 12
 
   default_scope -> { order('videos.created_at DESC') }
