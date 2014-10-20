@@ -6,7 +6,7 @@ class PagesController < ApplicationController
 
     respond_to do |format|
       format.html {
-        @carousel = @videos.published.featured.take(7)
+        @carousel = @videos.published.featured.take(9)
   	    @published_only = @videos.published_only.take(7)
   	    @sub = @published_only.shift(4)
         @both = @carousel.shift(4)
