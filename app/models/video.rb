@@ -3,7 +3,7 @@ class Video < ActiveRecord::Base
 
   extend FriendlyId #https://github.com/norman/friendly_id
 
-  friendly_id :title, use: [:slugged, :finders, :history]
+  friendly_id :vid, use: [:slugged, :finders, :history]
 
   belongs_to :user, foreign_key: :user_id
 

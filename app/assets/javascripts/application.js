@@ -18,3 +18,10 @@
 //= require dataTables.bootstrap
 //= require turbolinks
 //= require_tree .
+
+$(document).ready( function () {
+    $(".btn").tooltip({
+    	placement : 'bottom',
+    	container: 'body'
+    });
+});

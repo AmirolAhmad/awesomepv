@@ -31,10 +31,10 @@
                   <%= link_to watch_path(video), :class => "btn btn-default", "data-toggle" => "tooltip", :title => "Show the video" do %>
                     <span class="glyphicon glyphicon-eye-open"></span>
                   <% end %>
-                  <%= link_to edit_video_path(video), :class => "btn btn-info", "data-toggle" => "tooltip", :title => "Edit this video" do %>
+                  <%= link_to edit_admin_user_video_path(id:video), :class => "btn btn-info", "data-toggle" => "tooltip", :title => "Edit this video" do %>
                     <span class="glyphicon glyphicon-edit"></span>
                   <% end %>
-                  <%= link_to video_path(video), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger", "data-toggle" => "tooltip", :title => "Remove this video" do %>
+                  <%= link_to admin_user_video_path(id:video), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger", "data-toggle" => "tooltip", :title => "Remove this video" do %>
                     <span class="glyphicon glyphicon-remove"></span>
                   <% end %>
                   </div>

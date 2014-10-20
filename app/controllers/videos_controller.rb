@@ -23,7 +23,11 @@ class VideosController < ApplicationController
       @video.update_attributes(:state => "published")
       @video.update_attributes(:published_at => Time.zone.now)
 
-      redirect_to videos_path, notice: "New video has been created."
+      random = [('a'..'z'), ('A'..'Z'), ('1'..'9')].map { |i| i.to_a }.flatten
+      vid = (0...12).map { random[rand(random.length)] }.join
+      @video.update_attributes(:vid => vid)
+
+      redirect_to watch_path(@video), notice: "New video has been created."
     else
       render 'new'
     end
@@ -54,6 +58,11 @@ class VideosController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @video.destroy
+    redirect_to videos_path, notice: "Video has been deleted."
   end
 
   private

@@ -3,16 +3,10 @@
 </div>
 
 <div class="marketing row">
-  <div class="col-md-6">
+  <div class="col-md-12 text-center">
     <%= image_tag('Dude@2x.png', :alt => "View Message", :style => 'width: 140px; height: 140px;') %>
-    <h2>User List</h2>
-    <p class="small">Manage your client details.</p>
-    <p><%= link_to "Manage User", admin_users_path, :class => "btn btn-primary" %></p>
-  </div>
-  <div class="col-md-6">
-    <%= image_tag('Book@2x.png', :alt => "View Message", :style => 'width: 140px; height: 140px;') %>
-    <h2>Video Story</h2>
-    <p class="small">Manage your all Video Story details.</p>
-    <p><%= link_to "Manage Video Stories", "", :class => "btn btn-primary" %></p>
+    <h2>List of User</h2>
+    <p class="small">Manage your user & video details.</p>
+    <p><%= link_to "Enter", admin_users_path, :class => "btn btn-primary" %></p>
   </div>
 </div>

@@ -43,7 +43,7 @@
   <div class="row">
     <% @random.each do |video| %>
     <div class="col-md-3 col-sm-6 col-xs-6">
-      <%= link_to video_path(video) do %>
+      <%= link_to watch_path(video) do %>
       <img src="http://i3.ytimg.com/vi/<%= video.youtube_id %>/maxresdefault.jpg" alt="" class="img-responsive">
       <% end %>
       <h4><%= video.title %></h4>

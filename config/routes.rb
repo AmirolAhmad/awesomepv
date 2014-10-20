@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     get "/" => "dashboards#index", as: 'master'
     resources :dashboards, only: [:index]
     resources :users do
-      resources :videos
+      resources :videos, only: [:index, :edit, :update, :destroy]
     end
   end
 
@@ -21,6 +21,8 @@ Rails.application.routes.draw do
       get 'next_stories'
     end
   end
+
+  get '/v=:id' => 'videos#show', as: 'watch' #example - awesomepv.dev/v=aNFo5HWC3QI
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

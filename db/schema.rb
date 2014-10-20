@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141019182817) do
+ActiveRecord::Schema.define(version: 20141020062524) do
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 20141019182817) do
     t.string   "slug"
     t.string   "state"
     t.datetime "published_at"
+    t.string   "vid"
   end
 
   add_index "videos", ["deleted_at"], name: "index_videos_on_deleted_at", using: :btree

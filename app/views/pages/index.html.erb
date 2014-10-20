@@ -21,7 +21,7 @@
 <div class="carousel-inner">
   <% @carousel.each_with_index do |video, index| %>
   <div class='item <% if index == 0 %>active<% end %>'>
-    <%= link_to video_path(video) do %>
+    <%= link_to watch_path(video) do %>
     <img src="http://i3.ytimg.com/vi/<%= video.youtube_id %>/maxresdefault.jpg" alt="" class="img-responsive">
     <% end %>
     <div class="carousel-caption">
@@ -51,7 +51,7 @@
   <div class="row">
     <% @sub.each do |video| %>
     <div class="col-md-3 col-sm-6 col-xs-6">
-      <%= link_to video_path(video) do %>
+      <%= link_to watch_path(video) do %>
       <img src="http://i3.ytimg.com/vi/<%= video.youtube_id %>/maxresdefault.jpg" alt="" class="img-responsive">
       <h4><%= video.title %></h4>
       <% end %>
