@@ -1,0 +1,19 @@
+<!-- Latest Videos -->
+<div id="latestVideos">
+<!-- Video 1 -->
+<%= link_to watch_path(index_video) do %>
+<h3><%= index_video.title %></h3>
+<% end %>
+<div class="metaDetails">
+  <p>Published on <%= index_video.published_at.strftime("%d %B %Y") %> by <%= index_video.user.profile.full_name %></p><br />
+  <p><%= index_video.views %> people views this video</p>
+</div>
+<%= link_to watch_path(index_video) do %>
+<img src="http://i3.ytimg.com/vi/<%= index_video.youtube_id %>/maxresdefault.jpg" alt="" class="img-responsive">
+<% end %>
+<p class="text-justify"><%=h truncate(index_video.description, :length => 220) %></p>
+<%= link_to "View this video", watch_path(index_video), :class => "btn btn-primary btn-sm" %>
+
+<div class="separator m-v-lg"></div>
+</div>
+<!-- Latest Videos End -->

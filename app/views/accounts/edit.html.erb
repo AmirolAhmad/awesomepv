@@ -1,0 +1,49 @@
+<div class="page-header">
+  <h1>User Details <small>Edit client details for your record.</small></h1>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <%= render partial: "sidebar" %>
+  </div>
+  <%= form_for :user, url: account_path(@user), method: :patch do |f| %>
+
+  <div class="col-md-8">
+    <!-- Client Details -->
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Profile Details</h3>
+      </div>
+      <div class="panel-body">
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+
+        <div class="row">
+          <%= f.fields_for :profile_attributes, @user.profile do |profile| %>
+          <div class="col-md-6">
+            <div class="form-group">
+              <%= profile.label :full_name, "Full Name" %>
+              <%= profile.text_field :full_name, :class => "form-control" %>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <%= profile.label :facebook_id, "Facebook ID" %>
+              <%= profile.text_field :facebook_id, :class => "form-control" %>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="panel-footer">
+        <div class="form-group">
+          <%= f.submit "Save", :class => "btn btn-primary" %>
+          <%= link_to 'Cancel', account_path, :class => "btn btn-link" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <% end %>
+</div>

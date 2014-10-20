@@ -19,7 +19,7 @@ Rails.application.configure do
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
-
+  config.log_level = :debug
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
 
@@ -28,13 +28,6 @@ Rails.application.configure do
   # number of complex assets.
   config.assets.debug = true
 
-  # Adds additional error checking when serving assets at runtime.
-  # Checks for improperly declared sprockets dependencies.
-  # Raises helpful error messages.
-  config.assets.raise_runtime_errors = true
-
-  # Raises error for missing translations
-  # config.action_view.raise_on_missing_translations = true
-
   config.action_mailer.default_url_options = { host: 'awesomepv.dev' }
+  config.action_mailer.delivery_method = :letter_opener
 end

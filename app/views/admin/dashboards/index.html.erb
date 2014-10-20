@@ -1,0 +1,12 @@
+<div class="alert alert-info">
+  <p>Welcome <b><%= current_user.username.upcase %></b> to the admin dashboard.</p>
+</div>
+
+<div class="marketing row">
+  <div class="col-md-12 text-center">
+    <%= image_tag('Dude@2x.png', :alt => "View Message", :style => 'width: 140px; height: 140px;') %>
+    <h2>List of User</h2>
+    <p class="small">Manage your user & video details.</p>
+    <p><%= link_to "Enter", admin_users_path, :class => "btn btn-primary" %></p>
+  </div>
+</div>

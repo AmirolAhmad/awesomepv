@@ -1,34 +1,84 @@
-<!--WRAPPER START-->
-<div class="wrapper gallery_video" id="home">
-	<!--HEADER START-->
-	<header class="border-color">
-		<div class="container">
-			<div class="logo">
-				<%= image_tag('logo-2.png', :alt => 'Video Magazine') %>
-			</div>
-			<div class="navbar main-navigation">
-				<div class="sigin">
-					<% if user_signed_in? %>
-					<%= link_to 'Submit Video', new_post_path %>
-					<%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-					<% else %>
-					<%= link_to 'Login', login_path %>
-					<a href="https://docs.google.com/forms/d/153d6JJqAVWX58PvJVZ3SIlUP5CJ4gDrRFpbR3rZLjOA/viewform" target="_blank">Suggest a Video</a>
-					<% end %>
-				</div>
-				<nav class="navbar-inner">
-					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</a>
-					<div class="nav-collapse">
-						<ul class="nav">
-							<li><%= link_to "Home", root_path %></li>
-						</ul>
-					</div>
-				</nav>
-			</div>
-		</div>
-	</header>
-	<!--HEADER END-->
+<!-- Branding Logo -->
+<div class="row hidden-xs">
+  <div class="col-xs-12">
+    <div id="branding">
+      <%= link_to "AwesomePV", root_path, :class => "apvLogo" %>
+    </div>
+  </div>
+</div>
+<!-- Branding Logo End -->
+
+<!-- Navbar -->
+<div id="apvNav">
+  <nav class="navbar navbar-default" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNav">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "AwesomePV", root_path, :class => "logo-xs visible-xs" %>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="nav navbar-nav nomar">
+        <li class="active">
+          <%= link_to root_path do %>
+          <span class="glyphicon glyphicon-home"></span>
+          <% end %>
+        </li>
+        <% if current_user.try(:admin) %>
+        <li>
+          <%= link_to admin_master_path do %>
+          <span class="glyphicon glyphicon-lock"></span>
+          <% end %>
+        </li>
+        <% end %>
+        <li>
+          <%= link_to 'Submit New Video', new_video_path %>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right nomar">
+        <% if user_signed_in? %>
+        <li><%= link_to 'My Profile', account_path %></li>
+        <li>
+          <%= link_to destroy_user_session_path, method: "delete" do %>
+          <span class="glyphicon glyphicon-log-out"></span>
+          <% end %>
+        </li>
+        <% else %>
+        <li>
+          <%= link_to 'Login', login_path %>
+        </li>
+        <li>
+          <%= link_to 'Register', register_path %>
+        </li>
+        <% end %>
+      </ul>
+      <!--
+      <form class="navbar-form navbar-right hidden-xs" role="search">
+        <div class="form-group">
+          <span class="glyphicon glyphicon-search"></span>
+          <input type="text" class="form-control">
+        </div>
+      </form>
+      -->
+    </div>
+  </nav>
+</div>
+<!-- Navbar End -->
+
+<script type="text/javascript">
+$(document).ready(function() {
+  var $header = $("#apvNav"),
+      $clone = $header.before($header.clone().addClass("container clone"));
+  
+  $(window).on("scroll", function() {
+      var fromTop = $(window).scrollTop();
+      $("body").toggleClass("down", (fromTop > 200));
+  });
+});
+</script>

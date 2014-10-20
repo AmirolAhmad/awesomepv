@@ -1,12 +1,26 @@
-<h2>Resend confirmation instructions</h2>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
 
-<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+    <div class="page-header">
+      <h1 class="text-center">Resend confirmation instructions</h1>
+    </div>
+    <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
+            <%= f.email_field :username, autofocus: true, :class => "form-control", :placeholder => "Username" %>
+          </div>
+        </div>
+        <%= f.submit "Resend confirmation instructions", :class => "btn btn-primary" %>
+      <% end %>
 
-  <div><%= f.submit "Resend confirmation instructions" %></div>
-<% end %>
+      <hr>
 
-<%= render "devise/shared/links" %>
+      <%= render "devise/shared/links" %>
+    </div>
+
+  </div>
+</div>

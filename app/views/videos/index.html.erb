@@ -1,0 +1,58 @@
+<div class="page-header">
+  <h1>Video List <small>Manage your video details here.</small></h1>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <%= render partial: "sidebar" %>
+  </div>
+  <div class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">List Submitted Video <%= link_to 'Submit New Video', new_video_path, :class => "pull-right btn btn-primary btn-xs", :style => "color:#ffffff;" %></h3>
+      </div>
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover" id="videoDetails">
+            <thead>
+              <tr>
+                <th>Video Title</th>
+                <th>Date Added</th>
+                <th class="col-md-2">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @videos.each do |video| %>
+              <tr>
+                <td><%= video.try(:title) %></td>
+                <td><%= video.try(:created_at).strftime("%d %B %Y") %></td>
+                <td>
+                  <div class="btn-group btn-group-xs btn-group-justified">
+                  <%= link_to watch_path(video), :class => "btn btn-default", "data-toggle" => "tooltip", :title => "Show the video" do %>
+                    <span class="glyphicon glyphicon-eye-open"></span>
+                  <% end %>
+                  <%= link_to edit_video_path(video), :class => "btn btn-info", "data-toggle" => "tooltip", :title => "Edit this video" do %>
+                    <span class="glyphicon glyphicon-edit"></span>
+                  <% end %>
+                  <%= link_to video_path(video), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger", "data-toggle" => "tooltip", :title => "Remove this video" do %>
+                    <span class="glyphicon glyphicon-remove"></span>
+                  <% end %>
+                  </div>
+                </td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+$(document).ready( function () {
+    $('#videoDetails').DataTable();
+} );
+</script>
+
+

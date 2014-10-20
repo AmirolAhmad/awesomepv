@@ -1,0 +1,9 @@
+if (<%= @videos.count > 0 %>){
+  $('#js-trailing-stories').append('<%= j render partial: "index_video", collection: @videos %>');
+  <% if @videos.next_page %>
+    $('.js-page').replaceWith('<%= j will_paginate(@videos, { page_links: false, class: "pagination js-page"}) %>');
+  <% else %>
+    $('.js-page').remove();
+    $('#js-trailing-stories').append($("<h1 class='text-center'>- END -</h1>"));
+  <% end %>
+}

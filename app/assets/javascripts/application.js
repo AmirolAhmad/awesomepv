@@ -11,16 +11,17 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
-//= require bootstrap.min
-//= require underscore
-//= require backbone
-//= require backbone.marionette
-//= require backbone/awesomepv
-//= require jquery.flexslider
-//= require jquery.jcarousel.min
-//= require jquery.jscrollpane.min
-//= require jquery.scrollTo.min
-//= require functions
-//= require prettyph
+//= require bootstrap
+//= require jquery.dataTables
+//= require dataTables.bootstrap
+//= require turbolinks
 //= require_tree .
+
+$(document).ready( function () {
+    $(".btn").tooltip({
+    	placement : 'bottom',
+    	container: 'body'
+    });
+});

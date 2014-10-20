@@ -1,0 +1,386 @@
+/*!
+ * Awesome Picture & Video v2.0 (http://awesomepv.com)
+ * Copyright 2013-2014 AwesomePV.
+ * Licensed under Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0.txt)
+!*/
+
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700);
+
+.nopad {padding:0!important}
+.nomar {margin:0!important}
+.m-b-xl{margin-bottom:30px}
+.m-v-lg{margin:30px 0}
+.m-r-md{margin-right:15px}
+
+body {
+  font-family: 'Roboto Slab', serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+  margin-bottom: 40px;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+#branding  a.apvLogo {
+  display: block;
+  background: url('<%= asset_path("logo.png")%>') no-repeat 0 0;
+  height: 101px;
+  width: 390px;
+  margin: 30px auto 30px;
+  font-size: 0;
+  color: transparent;
+  text-indent: -9999px;
+}
+
+body.down #apvNav.clone {
+  top:0;
+}
+
+#apvNav {
+  position: relative;
+}
+
+#apvNav.clone {
+  padding-top: 20px;
+  background: #fff;
+  position:fixed;
+  top:-95px;
+  left: 0;
+  right: 0;
+  z-index:999;
+  transition:0.4s top cubic-bezier(.3,.73,.3,.74);
+}
+
+#apvNav .navbar {
+  border-radius: 0;
+  min-height: 0;
+}
+
+#apvNav .navbar-default {
+  background: transparent;
+  border: 0;
+  font-family: 'Roboto Slab', serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #666;
+  padding-bottom: 13px;
+}
+
+#apvNav .navbar-collapse {
+  padding: 0;
+}
+
+#apvNav .navbar-nav > li {
+  padding: 0 5px;
+  border-right: 1px solid #ccc;
+}
+
+#apvNav .navbar-nav > li:first-child {
+  border-left: 1px solid #ccc;
+}
+
+#apvNav .navbar-nav > li > a {
+  padding: 0 13px;
+  color: #666;
+}
+
+#apvNav .navbar-nav > li > a:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+#apvNav .navbar-default .navbar-nav > .active > a,
+#apvNav .navbar-default .navbar-nav > .active > a:hover,
+#apvNav .navbar-default .navbar-nav > .active > a:focus {
+  background: #000;
+  color: #fff;
+}
+
+#apvNav .navbar-form {
+  margin: 0 -25px 0 0;
+}
+
+#apvNav .logo-xs {
+  text-indent: -9999px;
+  background: url('<%= asset_path("logo-xs.png")%>') no-repeat 0 0;
+  height: 52px;
+  width: 200px;
+  color: transparent;
+}
+
+#apvNav .navbar-form input,
+#apvNav .navbar-form input.form-control {
+  border-color: #666;
+  font-size: 11px;
+  padding: 0 12px;
+  height: 20px;
+  line-height: 1.1em;
+  width: 40px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-radius: 50px;
+  transition: 0.2s linear;
+}
+
+#apvNav .navbar-form input:hover,
+#apvNav .navbar-form input.form-control:hover {
+  width: 150px;
+}
+
+#apvNav .glyphicon-search {
+  font-size: 10px;
+  color: #999;
+  margin-left: -35px;
+  z-index: 1;
+}
+
+.carousel-caption {
+  left: 0;
+  right: 0;
+  text-align: left;
+  margin: 0 50px;
+  text-transform: uppercase;
+  bottom: 0;
+}
+
+.carousel-caption h3 {
+  font-size: 44px;
+}
+
+.carousel-caption .readmore {
+  text-decoration: underline;
+}
+
+.carousel-control {
+  background: #000;
+  width: 50px;
+  height: 50px;
+  top: 46%;
+}
+
+.carousel-control.left,
+.carousel-control.right {
+  background-image: none;
+}
+
+.carousel-control:hover {
+  opacity: 1;
+}
+
+#featuredVideos {
+  margin-top: 30px;
+}
+
+.separator {
+  background: #666;
+  height: 2px;
+  line-height: 1px;
+}
+
+.separator span {
+  text-transform: uppercase;
+  background: #111;
+  color: #fff;
+  padding: 4px 20px;
+  font-family: 'Roboto Slab', serif;
+  font-size: 11px;
+}
+
+#latestVideos {
+  // margin-bottom: 10px;
+}
+
+#latestVideos h3 {
+  font-weight: 700;
+  font-size: 44px;
+}
+
+.metaDetails {
+  margin-bottom: 20px;
+}
+
+#latestVideos .metaDetails p {
+  text-transform: uppercase;
+  font-weight: 200;
+  display: inline;
+  color: #666;
+  font-size: 11px;
+}
+
+#latestVideos .metaDetails span {
+  display: inline;
+  background: #111;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 4px 20px;
+  font-size: 11px;
+  border: solid 1px #111;
+}
+
+#latestVideos span2 {
+  display: inline;
+  background: #fff;
+  text-transform: uppercase;
+  color: #111;
+  padding: 4px 20px;
+  font-size: 11px;
+  border: solid 1px #111;
+}
+
+#latestVideos p {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #666;
+  font-family: 'Helvetica', serif;
+}
+
+#latestVideos .btn-primary {
+  background: #333;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: 'Roboto Slab', serif;
+  border: 0;
+  padding: 7px 20px;
+  margin-top: 10px;
+  border-radius: 0;
+}
+
+#latestVideos .btn-primary:hover {
+  background: #000;
+}
+
+#latestVideos .btn-facebook {
+  background: #3b5998;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: 'Roboto Slab', serif;
+  border: 0;
+  padding: 7px 20px;
+  margin-top: 10px;
+  border-radius: 0;
+}
+
+#latestVideos .btn-facebook:hover {
+  background: #344e86;
+}
+
+#latestVideos .btn-twitter {
+  background: #4099FF;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: 'Roboto Slab', serif;
+  border: 0;
+  padding: 7px 20px;
+  margin-top: 10px;
+  border-radius: 0;
+}
+
+#latestVideos .btn-twitter:hover {
+  background: #3989e5;
+}
+
+#apvFooter {
+  background: #111;
+  color: #fff;
+  font-size: 12px;
+  padding: 10px 0;
+  margin-top: 60px;
+  bottom:0;
+  position:fixed;
+  // height:40px;
+  width:100%;
+  z-index:20;
+}
+
+#apvFooter a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#apvFooter a:hover {
+  color: #666;
+}
+
+.back-top {
+  position:fixed;
+  display:none;
+  cursor: pointer;
+}
+
+/* Error Message */
+
+/*flash*/
+.alert-error {
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #b94a48;
+  text-align: left;
+}
+
+.alert-alert {
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #b94a48;
+  text-align: left;
+}
+
+.alert-success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #468847;
+  text-align: left;
+}
+
+.alert-notice {
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+  color: #8a6d3b;
+  text-align: left;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 960px;
+  }
+}
+
+@media (min-width: 321px) and (max-width: 800px) {
+  body {
+    margin-bottom: 100px;
+  }
+  #apvNav {
+    padding-top: 30px;
+  }
+
+  .carousel-caption h3 {
+    font-size: 20px;
+  }
+
+  #latestVideos {
+    // padding-bottom: 60px;
+  }
+
+  #latestVideos h3 {
+    font-size: 20px;
+  }
+
+  #latestVideos p {
+    font-size: 16px;
+  }
+}
+
+
+
+
+

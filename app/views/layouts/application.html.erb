@@ -1,31 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Awesome Video | <%= yield(:title) %></title>
-	<meta name="description" content="<%= yield(:description) %>" />
-	<meta name="keywords" content="9gag, tv, video, jokes, interesting, cool, fun collection, fun portfolio, admire, fun, humor, humour, just for fun, funny, prank, scary, brazil funny, sexy lady, lol, gag, meme, gif" />
-	<meta name="author" content="AwesomePV" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Awesome Picture & Video">
+  <meta name="keywords" content="9gag, tv, video, jokes, interesting, cool, fun collection, fun portfolio, admire, fun, humor, humour, just for fun, funny, prank, scary, brazil funny, sexy lady, lol, gag, meme, gif">
+  <meta name="author" content="AwesomePV">
+  <title><%= (title = yield :title).blank? ? "Awesome Picture & Video" : title %></title>
 
-	<%= stylesheet_link_tag    'application' %>
-	<%= javascript_include_tag 'application' %>
-	<%= favicon_link_tag 'favicon.ico' %>
-	
-	<%= csrf_meta_tags %>
-	<%= render "meta_tags" %>
-	<%= render "analytics" %>
-
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <%= yield :meta_tags %>
+  <%= render "analytics" %>
 </head>
-<body>
-	<%= render partial: "social" %>
-	<div id="fb-root"></div>
-	<%= render partial: "header" %>
-
-	<%= yield %>
-
-	<%= render partial: "footer" %>
+<body class="<%= body_class %>" data-user="<%= h current_user.try(:to_json) %>">
+<div class="container">
+  <%= render partial: "header" %>
+  <%= render 'layouts/messages' %>
+  <%= yield %>
+</div>
+  <%= render partial: "footer" %>
 
 </body>
 </html>
