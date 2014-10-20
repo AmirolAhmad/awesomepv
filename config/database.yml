@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: awesomepv_production
-  username: awesomepv
-  password: <%= ENV['AWESOMEPV_DATABASE_PASSWORD'] %>
+  username: 
+  password:
