@@ -14,10 +14,3 @@ test:
   password:
   pool: 5
   timeout: 5000
-
-production:
-  adapter: mysql2
-  database: awesomepv_production
-  username: 
-  password: 
-  pool: 5
