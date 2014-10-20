@@ -22,7 +22,7 @@
   <% @carousel.each_with_index do |video, index| %>
   <div class='item <% if index == 0 %>active<% end %>'>
     <%= link_to watch_path(video) do %>
-    <img src="http://i3.ytimg.com/vi/<%= video.youtube_id %>/maxresdefault.jpg" alt="" class="img-responsive">
+    <img src="http://i3.ytimg.com/vi/<%= video.youtube_id %>/maxresdefault.jpg" style="width:960px;height:500px;" alt="" class="img-responsive">
     <% end %>
     <div class="carousel-caption">
       <h3><%= video.title %></h3>
