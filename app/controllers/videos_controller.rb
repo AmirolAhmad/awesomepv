@@ -42,6 +42,7 @@ class VideosController < ApplicationController
 
     @videos = Video.all.limit(4)
     @random = @videos.random
+    @video.increment!(:views)
   end
 
   def edit
