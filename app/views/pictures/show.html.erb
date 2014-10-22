@@ -11,7 +11,7 @@
                   :canonical => request.url,
                   :og_title => "#{@picture.try(:title)}",
                   :og_description => "#{@picture.try(:content)}",
-                  :og_image => ""
+                  :og_image => "#{@picture.cover_photo_url}"
              } %>
 <% end %>
 
