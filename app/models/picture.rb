@@ -12,7 +12,7 @@ class Picture < ActiveRecord::Base
   validates :title, length: { maximum: 240 }, presence: true
   validates_presence_of   :cover_photo
 
-  self.per_page = 12
+  self.per_page = 4
 
   default_scope -> { order('pictures.created_at DESC') }
   scope :published, -> { where('state = ?', 'published').unscope(:order).order('`pictures`.published_at DESC') }
