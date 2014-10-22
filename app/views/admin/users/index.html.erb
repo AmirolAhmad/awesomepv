@@ -9,6 +9,7 @@
         <th>User Full Name</th>
         <th>Client Email</th>
         <th>No. of submitted video</th>
+        <th>No. of submitted picture</th>
         <th class="col-md-2">Action</th>
       </tr>
     </thead>
@@ -18,6 +19,7 @@
         <td><%= user.profile.try(:full_name) %></td>
         <td><%= user.email %></td>
         <td><%= user.videos.count %></td>
+        <td><%= user.pictures.count %></td>
         <td>
           <div class="btn-group btn-group-xs btn-group-justified">
           <%= link_to admin_user_path(user), :class => "btn btn-default", "data-toggle" => "tooltip", :title => "Get more details" do %>

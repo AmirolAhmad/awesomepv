@@ -1,5 +1,5 @@
 <div class="list-group">
-  <%= link_to admin_user_path, :class => 'list-group-item active' do %>
+  <%= link_to admin_user_path(@user.username), :class => 'list-group-item' do %>
     <h5>User Details</h5>
     <p class="list-group-item-text">Manage user account details</p>
   <% end %>
@@ -7,8 +7,8 @@
     <h5>Video Details</h5>
     <p class="list-group-item-text">Manage submitted video</p>
   <% end %>
-  <%= link_to admin_user_pictures_path(@user.username), :class => 'list-group-item' do %>
-    <h5>Picture Details</h5>
-    <p class="list-group-item-text">Manage submitted picture</p>
+  <%= link_to admin_user_pictures_path(@user.username), :class => 'list-group-item active' do %>
+    <h5>Video Details</h5>
+    <p class="list-group-item-text">Manage submitted video</p>
   <% end %>
 </div>
