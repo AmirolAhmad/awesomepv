@@ -92,8 +92,9 @@ Rails.application.configure do
     :address        => 'smtp.mandrillapp.com',
     :port           => '587',
     :authentication => :plain,
-    :user_name      => '<%= ENV["MANDRILL_USERNAME"] %>',
-    :password       => '<%= ENV["MANDRILL_PASSWORD"] %>',
+    :user_name      => '9w2pdf@gmail.com',
+    :password       => 'avv9jgTd1Ch5Acieo70Z9w',
+    :domain         => 'awesomepv.com',
     :enable_starttls_auto => true
   }
 end
