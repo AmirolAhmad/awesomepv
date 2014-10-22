@@ -18,7 +18,7 @@ set :rails_env, :production
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-server 'awesomepv.com', user: 'deploy', roles: %w{web app}
+server '128.199.138.90', user: 'deploy', roles: %w{web app}
 
 
 # Custom SSH Options
