@@ -19,9 +19,15 @@ class Video < ActiveRecord::Base
   scope :published_only, -> { where('featured IS NOT TRUE') }
   scope :random, -> { unscope(:order).order('RAND()') }
 
+  after_create :send_video_email
+
   protected
 
   def published?
     state == 'published'
   end
+
+  def send_video_email
+    VideoMailer.video_email(self.user).deliver
+ end
 end
