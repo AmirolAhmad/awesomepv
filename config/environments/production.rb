@@ -97,7 +97,4 @@ Rails.application.configure do
     :domain         => 'awesomepv.com',
     :enable_starttls_auto => true
   }
-
-  ActionMailer::BASE.delivery_method = :smtp
-  ActionMailer::BASE.default charset: "utf-8"
 end
