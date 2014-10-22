@@ -47,6 +47,26 @@
         </div>
         <div class="row">
           <div class="col-md-12">
+            <div class="form-group">
+              <%= f.label :cover_photo, "Current Cover Photo" %><br />
+              <% if @picture.cover_photo.url.present? %>
+                <%= image_tag(@picture.cover_photo.url(:thumb))  %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+                <%= f.label :cover_photo, "Replace Cover Photo" %>
+                <%= f.file_field :cover_photo %>
+                <%= f.hidden_field :cover_photo_cache %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
             <div class="checkbox">
               <label>
               <%= f.check_box :featured, :type => 'checkbox' %> Tick to mark this picture as featured
