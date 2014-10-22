@@ -9,8 +9,9 @@ class CreatePictures < ActiveRecord::Migration
       t.boolean :featured
       t.string :slug
       t.string :state
-      t.datetime :published_at
       t.integer :views
+      t.datetime :published_at
+      t.datetime :deleted_at
 
       t.timestamps
     end

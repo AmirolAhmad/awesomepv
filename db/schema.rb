@@ -35,8 +35,9 @@ ActiveRecord::Schema.define(version: 20141022051146) do
     t.boolean  "featured"
     t.string   "slug"
     t.string   "state"
-    t.datetime "published_at"
     t.integer  "views"
+    t.datetime "published_at"
+    t.datetime "deleted_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

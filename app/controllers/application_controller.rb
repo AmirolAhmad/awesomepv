@@ -20,4 +20,8 @@ class ApplicationController < ActionController::Base
   def video_params
     params.require(:video).permit(:id, :user_id, :title, :description, :source, :youtube_id, :featured)
   end
+
+  def picture_params
+    params.require(:picture).permit(:id, :user_id, :title, :content, :cover_photo, :featured)
+  end
 end

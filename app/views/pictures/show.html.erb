@@ -1,0 +1,58 @@
+<% content_for :title do %>
+  <%= "#{@picture.try(:title)}" %> - Awesome Picture & Video
+<% end %>
+<% content_for :meta_tags do %>
+  <%= render :partial => 'application/meta_tags',
+             :locals => {
+                  :type => "website",
+                  :title => "#{@picture.try(:title)}",
+                  :url => request.url,
+                  :description => "#{@picture.try(:content)}",
+                  :canonical => request.url,
+                  :og_title => "#{@picture.try(:title)}",
+                  :og_description => "#{@picture.try(:content)}",
+                  :og_image => ""
+             } %>
+<% end %>
+
+<!-- Latest Videos -->
+<div id="latestVideos">
+<!-- Video 1 -->
+<h3><%= @picture.title %></h3>
+<div class="metaDetails">
+  <p><%= @picture.views %> people views this picture</p>
+</div>
+<!-- cover photo here -->
+
+<div class="btn-group btn-group-lg btn-group-justified">
+  <a href="#" class="btn btn-facebook">Facebook</a>
+  <a href="#" class="btn btn-twitter">Twitter</a>
+</div>
+
+<div class="metaDetails">
+  <p class="small">Published on <%= @picture.published_at.strftime("%d %B %Y") %> by <%= @picture.user.username.upcase %></p>
+</div>
+<p class="text-justify"><%=h @picture.content %></p>
+
+</div>
+<!-- Latest Videos End -->
+
+<!-- Random Videos -->
+<div id="featuredVideos">
+  <div class="separator m-b-xl">
+    <span>You also may like</span>
+  </div>
+
+  <div class="row">
+    <% @random.each do |picture| %>
+    <div class="col-md-3 col-sm-6 col-xs-6">
+      <%= link_to view_path(picture) do %>
+      <img src="" alt="" class="img-responsive">
+      <% end %>
+      <h4><%= picture.title %></h4>
+      <p class="small">Published on <%= picture.published_at.strftime("%d %B %Y") %></p>
+    </div>
+    <% end %>
+  </div>
+</div>
+<!-- Random Videos End -->
