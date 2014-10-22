@@ -5,4 +5,4 @@ s3:
   region: #ap-southeast-1
 image_host: #https://signature-bravo-production.s3.amazonaws.com
 fb_app_id: #253501611440663
-DATABASE_URL: ENV["DATABASE_URL"]
+DATABASE_URL: #ENV["DATABASE_URL"]
