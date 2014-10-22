@@ -1,8 +1,6 @@
 site_domain: awesomepv.com
 google_analytics_tracker: #UA-53563177-2
 s3:
-  bucket: #signature-bravo-production
-  region: #ap-southeast-1
-image_host: #https://signature-bravo-production.s3.amazonaws.com
+  bucket: awesomepv
+image_host: https://awesomepv.s3.amazonaws.com
 fb_app_id: #253501611440663
-DATABASE_URL: #ENV["DATABASE_URL"]

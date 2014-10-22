@@ -22,7 +22,7 @@
 <div class="metaDetails">
   <p><%= @picture.views %> people views this picture</p>
 </div>
-<!-- cover photo here -->
+<%= image_tag @picture.cover_photo_url(:cover).to_s %>
 
 <div class="btn-group btn-group-lg btn-group-justified">
   <a href="#" class="btn btn-facebook">Facebook</a>
@@ -47,7 +47,7 @@
     <% @random.each do |picture| %>
     <div class="col-md-3 col-sm-6 col-xs-6">
       <%= link_to view_path(picture) do %>
-      <img src="" alt="" class="img-responsive">
+      <%= image_tag @picture.cover_photo_url(:thumb).to_s, :class => 'img-responsive' %>
       <% end %>
       <h4><%= picture.title %></h4>
       <p class="small">Published on <%= picture.published_at.strftime("%d %B %Y") %></p>

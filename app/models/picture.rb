@@ -1,4 +1,5 @@
 class Picture < ActiveRecord::Base
+  mount_uploader :cover_photo, CoverPhotoUploader
   acts_as_paranoid
 
   extend FriendlyId #https://github.com/norman/friendly_id
@@ -8,6 +9,7 @@ class Picture < ActiveRecord::Base
   belongs_to :user, foreign_key: :user_id
 
   validates :title, length: { maximum: 240 }, presence: true
+  validates_presence_of   :cover_photo
 
   self.per_page = 12
 

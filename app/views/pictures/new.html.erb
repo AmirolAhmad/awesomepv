@@ -11,7 +11,7 @@
       <div class="panel-heading">
         <h3 class="panel-title">Picture Details</h3>
       </div>
-      <%= form_for :picture, url: pictures_path, method: :post do |f| %>
+      <%= form_for :picture, url: pictures_path, :html => {:multipart => true}, method: :post do |f| %>
       <div class="panel-body">
 
         <% if @picture.errors.any? %>
@@ -42,6 +42,15 @@
               <%= f.label :content, "Picture Description" %>
               <%= f.text_area :content, :class => "form-control", :rows => 4 %>
               <p class="small help-block">Not more than 500 characters.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <%= f.label :cover_photo, "Set Cover Photo" %>
+              <%= f.file_field :cover_photo %>
+              <%= f.hidden_field :cover_photo_cache %>
             </div>
           </div>
         </div>
