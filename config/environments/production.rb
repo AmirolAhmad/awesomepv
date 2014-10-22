@@ -16,9 +16,9 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
   config.cache_store = :dalli_store,
-                    (ENV["MEMCACHIER_SERVERS"] || "").split(","),
-                    {:username => ENV["MEMCACHIER_USERNAME"],
-                     :password => ENV["MEMCACHIER_PASSWORD"],
+                    ('<%= ENV["MEMCACHIER_SERVERS"] %>' || "").split(","),
+                    {:username => '<%= ENV["MEMCACHIER_USERNAME"] %>',
+                     :password => '<%= ENV["MEMCACHIER_PASSWORD"] %>',
                      :failover => true,
                      :socket_timeout => 1.5,
                      :socket_failure_delay => 0.2
@@ -94,7 +94,6 @@ Rails.application.configure do
     :authentication => :plain,
     :user_name      => '<%= ENV["MANDRILL_USERNAME"] %>',
     :password       => '<%= ENV["MANDRILL_PASSWORD"] %>',
-    :domain         => 'awesomepv.com',
     :enable_starttls_auto => true
   }
 end
