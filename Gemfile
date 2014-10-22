@@ -38,6 +38,11 @@ gem 'will_paginate'
 gem 'memcachier'
 gem 'newrelic_rpm'
 gem "intercom-rails"
+gem 'carrierwave'
+gem 'carrierwave_backgrounder'
+gem 'fog'
+gem 'mini_magick'
+gem 'fastimage'
 
 # bundle exec rake doc:rails generates the API under doc/api.
 group :doc do
