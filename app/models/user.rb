@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
 
   has_one :profile, dependent: :destroy
   has_many :videos, dependent: :destroy
+  has_many :pictures, dependent: :destroy
   accepts_nested_attributes_for :profile, update_only: true, allow_destroy: true
 
   validates :username, :uniqueness => { :case_sensitive => false }
