@@ -62,6 +62,26 @@
 </div>
 <!-- Featured Videos End -->
 
+<!-- Featured Videos -->
+<div id="featuredVideos">
+  <div class="separator m-b-xl">
+    <span>Latest Picture</span>
+  </div>
+
+  <div class="row">
+    <% @pictures.each do |picture| %>
+    <div class="col-md-3 col-sm-6 col-xs-6">
+      <%= link_to view_path(picture) do %>
+      <%= image_tag picture.cover_photo_url(:thumb).to_s, :class => "img-responsive" %>
+      <h4><%= picture.title %></h4>
+      <% end %>
+      <p class="small">Published on <%= picture.published_at.strftime("%d %B %Y") %></p>
+    </div>
+    <% end %>
+  </div>
+</div>
+<!-- Featured Videos End -->
+
 <div class="separator m-v-lg"></div>
 
 <div id="js-trailing-stories">

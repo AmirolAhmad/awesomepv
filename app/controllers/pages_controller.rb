@@ -3,6 +3,7 @@ class PagesController < ApplicationController
   
   def index
   	@videos = Video.all.paginate(:page => params[:page])
+    @pictures = Picture.all.paginate(:page => params[:page])
 
     respond_to do |format|
       format.html {
