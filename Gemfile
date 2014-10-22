@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.1.3'
+# ruby '2.1.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
@@ -41,19 +41,22 @@ gem "intercom-rails"
 
 # bundle exec rake doc:rails generates the API under doc/api.
 group :doc do
-	gem 'sdoc', require: false
+  gem 'sdoc', require: false
 end
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 group :development do
-	gem 'spring'
-	gem 'letter_opener'
-	gem 'quiet_assets'
+  gem 'letter_opener'
+  gem 'quiet_assets'
+  gem 'capistrano', github: "capistrano/capistrano", require: false
+  gem 'capistrano-rbenv', github: "capistrano/rbenv", require: false
+  gem 'capistrano-bundler', github: "capistrano/bundler", require: false
+  gem 'capistrano-rails', require: false
 end
 
-group :production do
-  gem 'rails_12factor'
-end
+# group :production do
+#   gem 'rails_12factor'
+# end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
