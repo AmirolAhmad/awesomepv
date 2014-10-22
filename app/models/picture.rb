@@ -1,5 +1,6 @@
 class Picture < ActiveRecord::Base
   mount_uploader :cover_photo, CoverPhotoUploader
+  
   acts_as_paranoid
 
   extend FriendlyId #https://github.com/norman/friendly_id
