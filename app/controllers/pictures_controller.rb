@@ -40,8 +40,8 @@ class PicturesController < ApplicationController
       format.json { render json: @picture.to_json(include: [:user]) }
     end
 
-    @pictures = Picture.all.limit(4)
-    @random = @pictures.random.limit(12)
+    @pictures = Picture.all
+    @random = @pictures.random
     @picture.increment!(:views)
   end
 

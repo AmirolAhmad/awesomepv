@@ -16,6 +16,7 @@
 //= require bootstrap
 //= require jquery.dataTables
 //= require dataTables.bootstrap
+//= require slick
 //= require turbolinks
 //= require_tree .
 
@@ -31,3 +32,14 @@ var left = (screen.width/2)-(w/2);
 var top = (screen.height/2)-(h/2);
 var targetWin = window.open (pageURL, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
 } 
+
+$(document).ready(function(){
+  $('.one-time').slick({
+    dots: false,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 4,
+    touchMove: false,
+    slidesToScroll: 1
+  });
+});
