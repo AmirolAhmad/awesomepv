@@ -18,6 +18,7 @@
 </head>
 <body class="<%= body_class %>" data-user="<%= h current_user.try(:to_json) %>">
 <div class="container">
+  <%= render partial: "social" %>
   <%= render partial: "header" %>
   <%= render 'layouts/messages' %>
   <%= yield %>

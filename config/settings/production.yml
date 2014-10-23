@@ -3,4 +3,4 @@ google_analytics_tracker: #UA-53563177-2
 s3:
   bucket: awesomepv
 image_host: https://awesomepv.s3.amazonaws.com
-fb_app_id: #253501611440663
+fb_app_id: 236455219886248
