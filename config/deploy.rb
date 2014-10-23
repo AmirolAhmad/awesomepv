@@ -1,8 +1,12 @@
 # config valid only for Capistrano 3.1
 lock '3.2.1'
+require 'capistrano/ext/multistage'
+require 'capistrano/gitflow'
 
 set :application, 'awesomepv'
 set :repo_url, 'git@github.com:AmirolAhmad/awesomepv.git'
+
+server '128.199.138.90', user: 'deploy', roles: %w{web app}
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
