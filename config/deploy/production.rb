@@ -21,6 +21,8 @@ set :rails_env, :production
 
 server '128.199.138.90', user: 'deploy', roles: %w{web app}
 
+# Default deploy_to directory is /var/www/my_app
+set :deploy_to, '/home/deploy/awesomepv_production'
 
 # Custom SSH Options
 # ==================

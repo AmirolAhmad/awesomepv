@@ -21,6 +21,9 @@ set :rails_env, :staging
 
 server 'staging.awesomepv.com', user: 'deploy', roles: %w{web app}
 
+# Default deploy_to directory is /var/www/my_app
+set :deploy_to, '/home/deploy/awesomepv_staging'
+
 # Custom SSH Options
 # ==================
 # You may pass any option but keep in mind that net/ssh understands a
