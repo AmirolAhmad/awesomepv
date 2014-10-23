@@ -1,6 +1,6 @@
-set :application, 'awesomepv_production'
-set :stage, :production
-set :rails_env, :production
+set :application, 'awesomepv_staging'
+set :stage, :staging
+set :rails_env, :staging
 
 # Simple Role Syntax
 # ==================
@@ -19,8 +19,7 @@ set :rails_env, :production
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-server '128.199.138.90', user: 'deploy', roles: %w{web app}
-
+server 'staging.awesomepv.com', user: 'deploy', roles: %w{web app}
 
 # Custom SSH Options
 # ==================
