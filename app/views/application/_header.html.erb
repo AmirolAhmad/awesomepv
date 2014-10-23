@@ -54,10 +54,14 @@
         </li>
         <% else %>
         <li>
-          <%= link_to 'Login', login_path %>
+          <%= link_to login_path do %>
+            <span class="glyphicon glyphicon-user"></span> Login
+          <% end %>
         </li>
         <li>
-          <%= link_to 'Register', register_path %>
+          <%= link_to register_path do %>
+            <span class="glyphicon glyphicon-lock"></span> Register
+          <% end %>
         </li>
         <% end %>
       </ul>
