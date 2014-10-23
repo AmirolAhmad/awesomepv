@@ -41,7 +41,7 @@ class PicturesController < ApplicationController
     end
 
     @pictures = Picture.all.limit(4)
-    @random = @pictures.random
+    @random = @pictures.random.limit(12)
     @picture.increment!(:views)
   end
 
