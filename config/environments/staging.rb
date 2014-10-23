@@ -87,7 +87,7 @@ Rails.application.configure do
     :authentication => :plain,
     :user_name      => '9w2pdf@gmail.com',
     :password       => 'avv9jgTd1Ch5Acieo70Z9w',
-    :domain         => 'awesomepv.com',
+    :domain         => 'staging.awesomepv.com',
     :enable_starttls_auto => true
   }
 end
