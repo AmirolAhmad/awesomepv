@@ -19,7 +19,7 @@ set :rails_env, :staging
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-server 'staging.awesomepv.com', user: 'deploy', roles: %w{web app}
+server '128.199.138.90', user: 'deploy', roles: %w{web app}
 
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, '/home/deploy/awesomepv_staging'
