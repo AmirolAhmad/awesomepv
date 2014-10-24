@@ -34,7 +34,7 @@
             <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control", :placeholder => "Password Confirmation" %>
           </div>
         </div>
-        <%= f.submit "Create my account", :class => "btn btn-primary btn-block" %>
+        <%= f.button "Create my account", :class => "btn btn-primary btn-block", data: { disable_with: "<i class='fa fa-spinner fa-spin'></i> Registering ..." } %>
       <% end %>
 
       <hr>

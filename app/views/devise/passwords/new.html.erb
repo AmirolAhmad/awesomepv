@@ -14,7 +14,7 @@
             <%= f.email_field :username, autofocus: true, :class => "form-control", :placeholder => "Username" %>
           </div>
         </div>
-        <%= f.submit "Send me reset password instructions", :class => "btn btn-primary btn-block" %>
+        <%= f.button "Send me reset password instructions", :class => "btn btn-primary btn-block", data: { disable_with: "<i class='fa fa-spinner fa-spin'></i> Sending ..." } %>
       <% end %>
 
       <hr>
