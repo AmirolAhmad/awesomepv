@@ -34,6 +34,10 @@ class PicturesController < ApplicationController
   end
 
   def show
+    # url = "http://rubygems.org/api/v1/versions/httparty.json"
+    # @response = HTTParty.get(url)
+    # @result = JSON.parse(@response.body)
+
     @picture = Picture.find(params[:id])
     respond_to do |format|
       format.html { @picture }

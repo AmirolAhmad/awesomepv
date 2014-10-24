@@ -17,15 +17,9 @@
 //= require jquery.dataTables
 //= require dataTables.bootstrap
 //= require slick
+//= require jquery.magnific-popup
 //= require turbolinks
 //= require_tree .
-
-$(document).ready( function () {
-    $(".btn").tooltip({
-    	placement : 'bottom',
-    	container: 'body'
-    });
-});
 
 function PopupCenter(pageURL, title,w,h) {
 var left = (screen.width/2)-(w/2);
@@ -34,6 +28,11 @@ var targetWin = window.open (pageURL, title, 'toolbar=no, location=no, directori
 } 
 
 $(document).ready(function(){
+  $(".btn").tooltip({
+    placement : 'bottom',
+    container: 'body'
+  });
+
   $('.one-time').slick({
     dots: false,
     infinite: true,
@@ -41,5 +40,11 @@ $(document).ready(function(){
     slidesToShow: 4,
     touchMove: false,
     slidesToScroll: 1
+  });
+
+  $('.img-item').hover( function() {
+      $(this).find('.img-title').fadeIn(300);
+  }, function() {
+      $(this).find('.img-title').fadeOut(100);
   });
 });

@@ -17,21 +17,26 @@
 
 <!-- Latest Videos -->
 <div id="latestVideos">
-<!-- Video 1 -->
-<h3><%= @picture.title %></h3>
-<div class="metaDetails">
-  <p><%= @picture.views %> people views this picture</p>
-</div>
-<%= image_tag @picture.cover_photo_url(:cover).to_s %>
+  <!-- Video 1 -->
+  <h3><%= @picture.title %></h3>
+  <div class="metaDetails">
+    <p><%= @picture.views %> people views this picture</p>
+  </div>
+  <div class="img-item img-popup">
+    <%= image_tag @picture.cover_photo_url(:cover).to_s %>
+    <figcaption class="img-title">
+      <h5>Click to view in full size resolution</h5>    
+    </figcaption>
+  </div>
 
-<div class="btn-group btn-group-lg btn-group-justified">
-  <a href="javascript:void(0)" onclick="PopupCenter('http://www.facebook.com/sharer/sharer.php?u=<%= request.url %>', 'myPop1',600,450);" class="btn btn-facebook">Share on Facebook</a>
-  <a href="javascript:void(0)" onclick="PopupCenter('https://twitter.com/intent/tweet?source=tweetbutton&original_referer=<%= request.url %>&text=<%= @picture.try(:title) %>&url=<%= request.url %>', 'myPop1',600,450);" class="btn btn-twitter">Share on Twitter</a>
-</div>
+  <div class="btn-group btn-group-lg btn-group-justified">
+    <a href="javascript:void(0)" onclick="PopupCenter('http://www.facebook.com/sharer/sharer.php?u=<%= request.url %>', 'myPop1',600,450);" class="btn btn-facebook">Share on Facebook</a>
+    <a href="javascript:void(0)" onclick="PopupCenter('https://twitter.com/intent/tweet?source=tweetbutton&original_referer=<%= request.url %>&text=<%= @picture.try(:title) %>&url=<%= request.url %>', 'myPop1',600,450);" class="btn btn-twitter">Share on Twitter</a>
+  </div>
 
-<div class="metaDetails">
-  <p class="small">Published on <%= @picture.published_at.strftime("%d %B %Y") %> by <%= @picture.user.username.upcase %></p>
-</div>
+  <div class="metaDetails">
+    <p class="small">Published on <%= @picture.published_at.strftime("%d %B %Y") %> by <%= @picture.user.username.upcase %></p>
+  </div>
 <p class="text-justify"><%=h @picture.content %></p>
 
 </div>
@@ -56,3 +61,21 @@
   </div>
 </div>
 <!-- Random Videos End -->
+
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.img-popup').magnificPopup({
+      items: {
+        src: '<%= @picture.cover_photo_url %>'
+      },
+      type:'image'
+    });
+  });
+</script>
+
+
+
+
+
+
