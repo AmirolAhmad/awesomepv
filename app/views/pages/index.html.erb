@@ -22,7 +22,7 @@
   <% @carousel.each_with_index do |video, index| %>
   <div class='item <% if index == 0 %>active<% end %>'>
     <%= link_to watch_path(video) do %>
-    <img src="http://i3.ytimg.com/vi/<%= video.youtube_id %>/maxresdefault.jpg" style="width:960px;height:500px;" alt="" class="img-responsive">
+    <img src="//i3.ytimg.com/vi/<%= video.youtube_id %>/maxresdefault.jpg" style="width:960px;height:500px;" alt="" class="img-responsive">
     <% end %>
     <div class="carousel-caption">
       <h3><%= video.title %></h3>
@@ -52,7 +52,7 @@
     <% @sub.each do |video| %>
     <div class="col-md-3 col-sm-6 col-xs-6">
       <%= link_to watch_path(video) do %>
-      <img src="http://i3.ytimg.com/vi/<%= video.youtube_id %>/maxresdefault.jpg" alt="" class="img-responsive">
+      <img src="//i3.ytimg.com/vi/<%= video.youtube_id %>/maxresdefault.jpg" alt="" class="img-responsive">
       <h4><%= video.title %></h4>
       <% end %>
       <p class="small">Published on <%= video.published_at.strftime("%d %B %Y") %></p>

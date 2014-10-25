@@ -28,8 +28,8 @@
 </div>
 
 <div class="btn-group btn-group-lg btn-group-justified">
-  <a href="javascript:void(0)" onclick="PopupCenter('http://www.facebook.com/sharer/sharer.php?u=<%= request.url %>', 'myPop1',600,450);" class="btn btn-facebook">Share on Facebook</a>
-  <a href="javascript:void(0)" onclick="PopupCenter('https://twitter.com/intent/tweet?source=tweetbutton&original_referer=<%= request.url %>&text=<%= @video.try(:title) %>&url=<%= request.url %>', 'myPop1',600,450);" class="btn btn-twitter">Share on Twitter</a>
+  <a href="javascript:void(0)" onclick="PopupCenter('//www.facebook.com/sharer/sharer.php?u=<%= request.url %>', 'myPop1',600,450);" class="btn btn-facebook">Share on Facebook</a>
+  <a href="javascript:void(0)" onclick="PopupCenter('//twitter.com/intent/tweet?source=tweetbutton&original_referer=<%= request.url %>&text=<%= @video.try(:title) %>&url=<%= request.url %>', 'myPop1',600,450);" class="btn btn-twitter">Share on Twitter</a>
 </div>
 
 
@@ -52,7 +52,7 @@
     <% @random.each do |video| %>
     <div class="col-md-3 col-sm-6 col-xs-6">
       <%= link_to watch_path(video) do %>
-      <img src="http://i3.ytimg.com/vi/<%= video.youtube_id %>/maxresdefault.jpg" alt="" class="img-responsive">
+      <img src="//i3.ytimg.com/vi/<%= video.youtube_id %>/maxresdefault.jpg" alt="" class="img-responsive">
       <% end %>
       <h4><%= video.title %></h4>
       <p class="small">Published on <%= video.published_at.strftime("%d %B %Y") %></p>
