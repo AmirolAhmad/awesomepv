@@ -1,76 +1,67 @@
-<div class="page-header">
-  <h1>New Picture <small>Create your new picture here.</small></h1>
-</div>
+<div class="modal-body">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Picture Details</h3>
+    </div>
+    <%= form_for :picture, url: pictures_path, :html => {:multipart => true}, method: :post do |f| %>
+    <div class="panel-body">
 
-<div class="row">
-  <div class="col-md-4">
-    <%= render partial: "sidebar" %>
-  </div>
-  <div class="col-md-8">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Picture Details</h3>
-      </div>
-      <%= form_for :picture, url: pictures_path, :html => {:multipart => true}, method: :post do |f| %>
-      <div class="panel-body">
-
-        <% if @picture.errors.any? %>
-        <div class="alert alert-danger alert-dismissable">
-          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-          <strong><%= pluralize(@picture.errors.count, "error") %> prohibited
-            this picture from being saved:</strong>
-            <ul>
-              <% @picture.errors.full_messages.each do |msg| %>
-              <li><%= msg %></li>
-              <% end %>
-            </ul>
-        </div>
-        <% end %>
-
-        <div class="row">
-          <div class="col-md-12">
-            <div class="form-group">
-              <%= f.label :title, "Picture Title" %>
-              <%= f.text_field :title, :class => "form-control" %>
-              <p class="small help-block">Not more than 240 characters.</p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="form-group">
-              <%= f.label :content, "Picture Description" %>
-              <%= f.text_area :content, :class => "form-control", :rows => 4 %>
-              <p class="small help-block">Not more than 500 characters.</p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="form-group">
-              <%= f.label :cover_photo, "Set Cover Photo" %>
-              <%= f.file_field :cover_photo %>
-              <%= f.hidden_field :cover_photo_cache %>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="checkbox">
-              <label>
-              <%= f.check_box :featured, :type => 'checkbox' %> Mark this picture as featured
-              </label>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="panel-footer">
-        <div class="form-group">
-          <%= f.button "Submit picture", :class => "btn btn-primary", data: { disable_with: "<i class='fa fa-spinner fa-spin'></i> Submitting ..." } %>
-          <%= link_to 'Cancel', pictures_path, :class => "btn btn-link" %>
-        </div>
+      <% if @picture.errors.any? %>
+      <div class="alert alert-danger alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <strong><%= pluralize(@picture.errors.count, "error") %> prohibited
+          this picture from being saved:</strong>
+          <ul>
+            <% @picture.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+            <% end %>
+          </ul>
       </div>
       <% end %>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <%= f.label :title, "Picture Title" %>
+            <%= f.text_field :title, :class => "form-control" %>
+            <p class="small help-block">Not more than 240 characters.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <%= f.label :content, "Picture Description" %>
+            <%= f.text_area :content, :class => "form-control", :rows => 4 %>
+            <p class="small help-block">Not more than 500 characters.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <%= f.label :cover_photo, "Set Cover Photo" %>
+            <%= f.file_field :cover_photo %>
+            <%= f.hidden_field :cover_photo_cache %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="checkbox">
+            <label>
+            <%= f.check_box :featured, :type => 'checkbox' %> Mark this picture as featured
+            </label>
+          </div>
+        </div>
+      </div>
     </div>
+    <div class="panel-footer">
+      <div class="form-group">
+        <%= f.button "Submit picture", :class => "btn btn-primary", data: { disable_with: "<i class='fa fa-spinner fa-spin'></i> Submitting ..." } %>
+        <%= link_to 'Cancel', pictures_path, :class => "btn btn-link" %>
+      </div>
+    </div>
+    <% end %>
   </div>
 </div>

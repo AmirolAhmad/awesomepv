@@ -14,7 +14,7 @@ class VideosController < ApplicationController
 
   def new
     @video ||= Video.new
-    render
+    render layout: "popout"
   end
 
   def create
@@ -47,7 +47,7 @@ class VideosController < ApplicationController
 
   def edit
     if @video
-      render
+      render layout: "popout"
     else
       redirect_to video_path, notice: "Video not found."
     end
