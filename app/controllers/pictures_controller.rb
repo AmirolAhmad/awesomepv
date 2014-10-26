@@ -14,7 +14,7 @@ class PicturesController < ApplicationController
 
   def new
     @picture ||= Picture.new
-    render layout: "popout"
+    render
   end
 
   def create
@@ -51,7 +51,7 @@ class PicturesController < ApplicationController
 
   def edit
     if @picture
-      render layout: "popout"
+      render
     else
       redirect_to picture_path, notice: "Picture not found."
     end

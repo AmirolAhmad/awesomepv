@@ -9,7 +9,7 @@
   <div class="col-md-8">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">List Submitted Picture <%= link_to 'Submit New Picture', new_picture_path, data: { :toggle => "modal", :target => "#popout" }, :class => "pull-right btn btn-primary btn-xs", :style => "color:#ffffff;" %></h3>
+        <h3 class="panel-title">List Submitted Picture <%= link_to 'Submit New Picture', new_picture_path, :class => "pull-right btn btn-primary btn-xs", :style => "color:#ffffff;" %></h3>
       </div>
       <div class="panel-body">
         <div class="table-responsive">
@@ -31,7 +31,7 @@
                   <%= link_to view_path(picture), :class => "btn btn-default", "data-toggle" => "tooltip", :title => "Show the picture" do %>
                     <span class="glyphicon glyphicon-eye-open"></span>
                   <% end %>
-                  <%= link_to edit_picture_path(picture), data: { :toggle => "modal", :target => "#popout" }, :class => "btn btn-info", "data-toggle" => "tooltip", :title => "Edit this picture" do %>
+                  <%= link_to edit_picture_path(picture), :class => "btn btn-info", "data-toggle" => "tooltip", :title => "Edit this picture" do %>
                     <span class="glyphicon glyphicon-edit"></span>
                   <% end %>
                   <%= link_to picture_path(picture), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger", "data-toggle" => "tooltip", :title => "Remove this picture" do %>
@@ -54,14 +54,5 @@ $(document).ready( function () {
     $('#pictureDetails').DataTable();
 } );
 </script>
-
-<!-- Modal -->
-<div class="modal fade" id="popout" tabindex="-1" role="dialog" aria-labelledby="popout" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      
-    </div>
-  </div>
-</div>
 
 

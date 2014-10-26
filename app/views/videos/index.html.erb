@@ -9,7 +9,7 @@
   <div class="col-md-8">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">List Submitted Video <%= link_to 'Submit New Video', new_video_path, data: { :toggle => "modal", :target => "#popout" }, :class => "pull-right btn btn-primary btn-xs", :style => "color:#ffffff;" %></h3>
+        <h3 class="panel-title">List Submitted Video <%= link_to 'Submit New Video', new_video_path, :class => "pull-right btn btn-primary btn-xs", :style => "color:#ffffff;" %></h3>
       </div>
       <div class="panel-body">
         <div class="table-responsive">
@@ -31,7 +31,7 @@
                   <%= link_to watch_path(video), :class => "btn btn-default", "data-toggle" => "tooltip", :title => "Show the video" do %>
                     <span class="glyphicon glyphicon-eye-open"></span>
                   <% end %>
-                  <%= link_to edit_video_path(video), data: { :toggle => "modal", :target => "#popout" } ,:class => "btn btn-info", "data-toggle" => "tooltip", :title => "Edit this video" do %>
+                  <%= link_to edit_video_path(video), :class => "btn btn-info", "data-toggle" => "tooltip", :title => "Edit this video" do %>
                     <span class="glyphicon glyphicon-edit"></span>
                   <% end %>
                   <%= link_to video_path(video), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger", "data-toggle" => "tooltip", :title => "Remove this video" do %>
@@ -55,11 +55,4 @@ $(document).ready( function () {
 } );
 </script>
 
-<!-- Modal -->
-<div class="modal fade" id="popout" tabindex="-1" role="dialog" aria-labelledby="popout" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      
-    </div>
-  </div>
-</div>
+
