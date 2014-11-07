@@ -8,7 +8,7 @@ class Admin::VideosController < ApplicationController
     @videos = Video.where(user_id: @user)
     respond_to do |format|
       format.html { @videos }
-      format.json { render json: @videos.to_json(include: [:user]) }
+      format.json { render json: @videos.to_json }
     end
   end
 

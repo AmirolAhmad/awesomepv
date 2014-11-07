@@ -8,7 +8,7 @@ class VideosController < ApplicationController
     @videos = Video.where(user_id: @user)
     respond_to do |format|
       format.html { @videos }
-      format.json { render json: @videos.to_json(include: [:user]) }
+      format.json { render json: @videos.to_json }
     end
   end
 
@@ -37,7 +37,7 @@ class VideosController < ApplicationController
     @video = Video.find(params[:id])
     respond_to do |format|
       format.html { @video }
-      format.json { render json: @video.to_json(include: [:user]) }
+      format.json { render json: @video.to_json }
     end
 
     @videos = Video.all.limit(4)

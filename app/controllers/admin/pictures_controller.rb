@@ -8,7 +8,7 @@ class Admin::PicturesController < ApplicationController
     @pictures = Picture.where(user_id: @user)
     respond_to do |format|
       format.html { @pictures }
-      format.json { render json: @pictures.to_json(include: [:user]) }
+      format.json { render json: @pictures.to_json }
     end
   end
 

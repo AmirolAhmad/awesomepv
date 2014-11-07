@@ -8,7 +8,7 @@ class PicturesController < ApplicationController
     @pictures = Picture.where(user_id: @user)
     respond_to do |format|
       format.html { @pictures }
-      format.json { render json: @pictures.to_json(include: [:user]) }
+      format.json { render json: @pictures.to_json }
     end
   end
 
@@ -41,7 +41,7 @@ class PicturesController < ApplicationController
     @picture = Picture.find(params[:id])
     respond_to do |format|
       format.html { @picture }
-      format.json { render json: @picture.to_json(include: [:user]) }
+      format.json { render json: @picture.to_json }
     end
 
     @pictures = Picture.all
