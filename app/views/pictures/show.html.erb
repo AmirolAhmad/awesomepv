@@ -74,6 +74,14 @@
   });
 </script>
 
+<script type="text/javascript">
+$(document).ready(function(){
+  mixpanel.track("Picture viewed", {
+      "Picture ID": '<%= @picture.pid %>'
+  });
+});
+</script>
+
 
 
 
