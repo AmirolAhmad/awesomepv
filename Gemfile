@@ -44,6 +44,7 @@ gem 'fog'
 gem 'mini_magick'
 gem 'fastimage'
 gem 'httparty'
+gem 'mixpanel-ruby'
 
 # bundle exec rake doc:rails generates the API under doc/api.
 group :doc do

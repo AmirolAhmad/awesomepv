@@ -1,4 +1,7 @@
 class VideosController < ApplicationController
+  require 'mixpanel-ruby'
+  tracker = Mixpanel::Tracker.new(6ee4a30b269d81d1b42c85725fbff03a)
+
   before_filter :set_user, only: [:index, :new, :create, :edit, :update, :destroy]
   before_filter :set_video, only: [:edit, :update, :destroy]
   before_filter :require_user, only: [:index, :new, :create, :edit, :update, :destroy]
@@ -35,6 +38,7 @@ class VideosController < ApplicationController
 
   def show
     @video = Video.find(params[:id])
+    tracker.track(id, 'Video Play')
     respond_to do |format|
       format.html { @video }
       format.json { render json: @video.to_json }
