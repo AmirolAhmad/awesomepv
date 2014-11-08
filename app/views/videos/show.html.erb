@@ -61,3 +61,11 @@
   </div>
 </div>
 <!-- Random Videos End -->
+
+<script type="text/javascript">
+$(document).ready(function(){
+  mixpanel.track("Video played", {
+      "id": '<%= @video.id %>'
+  });
+});
+</script>
