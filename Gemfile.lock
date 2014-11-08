@@ -141,7 +141,6 @@ GEM
       subexec (~> 0.2.1)
     mini_portile (0.6.0)
     minitest (5.4.2)
-    mixpanel-ruby (1.6.0)
     multi_json (1.10.1)
     multi_xml (0.5.5)
     mysql2 (0.3.16)
@@ -246,7 +245,6 @@ DEPENDENCIES
   letter_opener
   memcachier
   mini_magick
-  mixpanel-ruby
   mysql2
   newrelic_rpm
   paranoia
