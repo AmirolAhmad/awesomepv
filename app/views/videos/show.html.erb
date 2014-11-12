@@ -20,22 +20,22 @@
 <!-- Video 1 -->
 <h3><%= @video.title %></h3>
 <div class="metaDetails">
-  <p><%= @video.views %> people views this video</p>
-  <span>Source</span><span2><%= @video.source %></span2>
+  <p><%= @video.views %> <%= t(:people_viewed) %></p>
+  <span><%= t(:source) %></span><span2><%= @video.source %></span2>
 </div>
 <div class="embed-responsive embed-responsive-16by9">
   <iframe class="embed-responsive-item" width="930" height="523" src="//www.youtube.com/embed/<%= @video.youtube_id %>?rel=0&showinfo=0&iv_load_policy=3&autoplay=1&vq=hd720" frameborder="0" allowfullscreen></iframe>
 </div>
 
 <div class="btn-group btn-group-lg btn-group-justified">
-  <a href="javascript:void(0)" onclick="PopupCenter('//www.facebook.com/sharer/sharer.php?u=<%= request.url %>', 'myPop1',600,450);" class="btn btn-facebook">Share on Facebook</a>
-  <a href="javascript:void(0)" onclick="PopupCenter('//twitter.com/intent/tweet?source=tweetbutton&original_referer=<%= request.url %>&text=<%= @video.try(:title) %>&url=<%= request.url %>', 'myPop1',600,450);" class="btn btn-twitter">Share on Twitter</a>
+  <a href="javascript:void(0)" onclick="PopupCenter('//www.facebook.com/sharer/sharer.php?u=<%= request.url %>', 'myPop1',600,450);" class="btn btn-facebook"><%= t(:share_fb) %></a>
+  <a href="javascript:void(0)" onclick="PopupCenter('//twitter.com/intent/tweet?source=tweetbutton&original_referer=<%= request.url %>&text=<%= @video.try(:title) %>&url=<%= request.url %>', 'myPop1',600,450);" class="btn btn-twitter"><%= t(:share_twitter) %></a>
 </div>
 
 
 
 <div class="metaDetails">
-  <p class="small">Published on <%= @video.published_at.strftime("%d %B %Y") %> by <%= @video.user.username.upcase %></p>
+  <p class="small"><%= t(:published_on) %> <%= @video.published_at.strftime("%d %B %Y") %> <%= t(:by) %> <%= @video.user.username.upcase %></p>
 </div>
 <p class="text-justify"><%=h @video.description %></p>
 
@@ -45,7 +45,7 @@
 <!-- Random Videos -->
 <div id="featuredVideos">
   <div class="separator m-b-xl">
-    <span>You also may like</span>
+    <span><%= t(:may_like) %></span>
   </div>
 
   <div class="row">
@@ -55,7 +55,7 @@
       <img src="//i3.ytimg.com/vi/<%= video.youtube_id %>/maxresdefault.jpg" alt="" class="img-responsive">
       <% end %>
       <h4><%= video.title %></h4>
-      <p class="small">Published on <%= video.published_at.strftime("%d %B %Y") %></p>
+      <p class="small"><%= t(:published_on) %> <%= video.published_at.strftime("%d %B %Y") %></p>
     </div>
     <% end %>
   </div>

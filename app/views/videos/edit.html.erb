@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h1>Edit Video <small>Edit your new video here.</small></h1>
+  <h1><%= t(:edit_video) %> <small><%= t(:edit_video_desc) %></small></h1>
 </div>
 
 <div class="row">
@@ -9,7 +9,7 @@
   <div class="col-md-8">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Video Details</h3>
+        <h3 class="panel-title"><%= t(:video_details) %></h3>
       </div>
       <%= form_for :video, url: video_path(@video), method: :patch do |f| %>
       <div class="panel-body">
@@ -30,32 +30,32 @@
         <div class="row">
           <div class="col-md-12">
             <div class="form-group">
-              <%= f.label :title, "Video Title" %>
+              <%= f.label :title, t(:video_title) %>
               <%= f.text_field :title, :class => "form-control" %>
-              <p class="small help-block">Not more than 240 characters.</p>
+              <p class="small help-block"><%= t(:video_title_limit) %></p>
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-md-12">
             <div class="form-group">
-              <%= f.label :description, "Video Description" %>
+              <%= f.label :description, t(:video_description) %>
               <%= f.text_area :description, :class => "form-control", :rows => 4 %>
-              <p class="small help-block">Not more than 500 characters.</p>
+              <p class="small help-block"><%= t(:video_desc_limit) %></p>
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <%= f.label :youtube_id, "Youtube ID" %>
+              <%= f.label :youtube_id, t(:youtube_id) %>
               <%= f.text_field :youtube_id, :class => "form-control" %>
-              <p class="small help-block">Make sure you just copy the Youtube ID (details).</p>
+              <p class="small help-block"><%= t(:youtube_instruc) %></p>
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group">
-              <%= f.label :source, "Source From" %>
+              <%= f.label :source, t(:source) %>
               <%= f.select(:source, options_for_select([['Youtube', 'Youtube'], ['Vimeo', 'Vimeo']], @video.source), {}, {:class => "form-control"}) %>
             </div>
           </div>
@@ -64,7 +64,7 @@
           <div class="col-md-12">
             <div class="checkbox">
               <label>
-              <%= f.check_box :featured, :type => 'checkbox' %> Tick to mark this video as featured
+              <%= f.check_box :featured, :type => 'checkbox' %> <%= t(:as_featured) %>
               </label>
             </div>
           </div>
@@ -72,8 +72,8 @@
       </div>
       <div class="panel-footer">
         <div class="form-group">
-          <%= f.button "Update video", :class => "btn btn-primary", data: { disable_with: "<i class='fa fa-spinner fa-spin'></i> Updating ..." } %>
-          <%= link_to 'Cancel', videos_path, :class => "btn btn-link" %>
+          <%= f.button t(:edit_video), :class => "btn btn-primary", data: { disable_with: "<i class='fa fa-spinner fa-spin'></i> Updating ..." } %>
+          <%= link_to t(:cancel), videos_path, :class => "btn btn-link" %>
         </div>
       </div>
       <% end %>

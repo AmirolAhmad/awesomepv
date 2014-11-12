@@ -1,0 +1,60 @@
+# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+
+my:
+  devise:
+    confirmations:
+      confirmed: "Alamat emel anda telah berjaya diaktifkan."
+      send_instructions: "Anda akan menerima emel dengan arahan bagaimana untuk mengaktifkan alamat emel anda dalam masa beberapa minit."
+      send_paranoid_instructions: "Jika alamat emel anda terdapat didalam pengkalan data kami, anda akan menerima arah bagaimana untuk mengesahkan alamt emel anda dalam masa beberapa minit lagi."
+    failure:
+      already_authenticated: "Anda sudah mendaftar masuk"
+      inactive: "Akaun anda masa tidak diaktifkan lagi."
+      invalid: "Maaf! Kombinasi nama pengguna atau emel dan kata laluan anda tidak tepat."
+      locked: "Akaun anda telah dikunci."
+      last_attempt: "Anda kini mempunyai 1 lagi peluang sebelum akaun anda dikunci."
+      not_found_in_database: "Maaf! Kombinasi nama pengguna atau emel dan kata laluan anda tidak tepat."
+      timeout: "Sesi anda telah tamat. Sila daftar masuk sekali lagi untuk teruskan."
+      unauthenticated: "Anda perlu mempunyai akaun atau daftar masuk sebelum teruskan."
+      unconfirmed: "Anda perlu sahkan akaun anda terlebih dahulu sebelum teruskan."
+    mailer:
+      confirmation_instructions:
+        subject: "Arahan pengaktifan"
+      reset_password_instructions:
+        subject: "Arahan reset kata laluan"
+      unlock_instructions:
+        subject: "Arahan untuk membuka kunci"
+    omniauth_callbacks:
+      failure: "Tidak dapat mengesahkan anda dari %{kind} kerana \"%{reason}\"."
+      success: "Berjaya disahkan dari akaun %{kind}."
+    passwords:
+      no_token: "Anda tidak boleh mengakses laman ini tanpa datang dari emel reset kata laluan anda. Jika anda datang dari emel reset kata lalaun, sila pastikan anda menggunakan pautan yang penuh yang telah diberi."
+      send_instructions: "Anda akan menerima emel dengan arahan bagaimana untuk menetapkan semula kata laluan anda dalam masa beberapa minit lagi."
+      send_paranoid_instructions: "Jika alamat emel anda wujud didalam pengkatan data kami, anda akan menerima arahan menetap semua kata laluan di alamat emel anda dalam masa beberapa minit lagi."
+      updated: "Kata laluan anda telah berjaya ditukar. Anda kini sudah mendaftar masuk."
+      updated_not_active: "Kata laluan anda telah berjaya ditukar."
+    registrations:
+      destroyed: "Terima kasih! Akaun anda telah berjaya dinyahaktifkan. Harap dapat berjumpa dengan anda lagi."
+      signed_up: "Selamat Datang. Akaun anda telah berjaya diaktifkan"
+      signed_up_but_inactive: "Anda telah berjaya mencipta akaun. Walaubagaimanapun, kami tidak dapat mendaftar anda masuk kerana akaun anda masih tidak diaktifkan lagi."
+      signed_up_but_locked: "Anda telah berjaya mencipta akaun. Walaubagaimanapun, kami tidak dapat mendaftar anda masuk kerana akaun anda masih lagi dikunci."
+      signed_up_but_unconfirmed: "Satu pesanan dengan pautan pengaktifan telah dihantar ke alamat emel anda. Sila ikut arahan dalam emel tersebut untuk mengaktifkan akaun anda."
+      update_needs_confirmation: "Anda telah berjaya mengemaskini akaun anda, tetapi kami perlu mengesahkan alamat emel anda yang baru. Sila semak emel anda dan ikut arahan untuk bagaimana mengesahkan alamat emel anda yang baru."
+      updated: "Akaun anda telah berjaya dikemaskinikan."
+    sessions:
+      signed_in: "Daftar masuk berjaya."
+      signed_out: "Daftar keluar berjaya."
+      already_signed_out: "Anda sudah berjaya mendaftar keluar."
+    unlocks:
+      send_instructions: "Anda akan menerima emel dengan arahan bagaimana untuk membuka kunci akaun anda dalam masa beberapa minit."
+      send_paranoid_instructions: "Jika akaun anda wujud, anda akan menerima emel arahan bagaimana untuk membuka kunci dalam masa beberapa minit lagi."
+      unlocked: "Akaun anda tidak lagi dikunci. Sila daftar masuk untuk teruskan."
+  errors:
+    messages:
+      already_confirmed: "telah disahkan, sila cuba untuk mendaftar masuk"
+      confirmation_period_expired: "perlu disahkan dalam masa %{period}, sila minta yang baru"
+      expired: "telah tamat. Sila minta yang baru"
+      not_found: "tidak ditemua"
+      not_locked: "tidak dikunci"
+      not_saved:
+        one: "Terdapat 1 ralat dari %{resource} sebelum berjaya disimpan:"
+        other: "Terdapat %{count} ralat dari %{resource} sebelum berjaya disimpan"

@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h1>New Picture <small>Create your new picture here.</small></h1>
+  <h1><%= t(:new_picture) %> <small><%= t(:new_picture_desc) %></small></h1>
 </div>
 
 <div class="row">
@@ -9,7 +9,7 @@
   <div class="col-md-8">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Picture Details</h3>
+        <h3 class="panel-title"><%= t(:picture_details) %></h3>
       </div>
       <%= form_for :picture, url: pictures_path, :html => {:multipart => true}, method: :post do |f| %>
       <div class="panel-body">
@@ -30,25 +30,25 @@
         <div class="row">
           <div class="col-md-12">
             <div class="form-group">
-              <%= f.label :title, "Picture Title" %>
+              <%= f.label :title, t(:picture_title) %>
               <%= f.text_field :title, :class => "form-control" %>
-              <p class="small help-block">Not more than 240 characters.</p>
+              <p class="small help-block"><%= t(:picture_title_limit) %></p>
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-md-12">
             <div class="form-group">
-              <%= f.label :content, "Picture Description" %>
+              <%= f.label :content, t(:picture_desc) %>
               <%= f.text_area :content, :class => "form-control", :rows => 4 %>
-              <p class="small help-block">Not more than 500 characters.</p>
+              <p class="small help-block"><%= t(:picture_desc_limit) %></p>
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-md-12">
             <div class="form-group">
-              <%= f.label :cover_photo, "Set Cover Photo" %>
+              <%= f.label :cover_photo, t(:set_cover_photo) %>
               <%= f.file_field :cover_photo %>
               <%= f.hidden_field :cover_photo_cache %>
             </div>
@@ -58,7 +58,7 @@
           <div class="col-md-12">
             <div class="checkbox">
               <label>
-              <%= f.check_box :featured, :type => 'checkbox' %> Mark this picture as featured
+              <%= f.check_box :featured, :type => 'checkbox' %> <%= t(:as_featured_pic) %>
               </label>
             </div>
           </div>
@@ -66,8 +66,8 @@
       </div>
       <div class="panel-footer">
         <div class="form-group">
-          <%= f.button "Submit picture", :class => "btn btn-primary", data: { disable_with: "<i class='fa fa-spinner fa-spin'></i> Submitting ..." } %>
-          <%= link_to 'Cancel', pictures_path, :class => "btn btn-link" %>
+          <%= f.button t(:submit_picture), :class => "btn btn-primary", data: { disable_with: "<i class='fa fa-spinner fa-spin'></i> Submitting ..." } %>
+          <%= link_to t(:batal), pictures_path, :class => "btn btn-link" %>
         </div>
       </div>
       <% end %>

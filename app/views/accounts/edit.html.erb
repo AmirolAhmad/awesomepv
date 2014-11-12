@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h1>User Details <small>Edit client details for your record.</small></h1>
+  <h1><%= t(:profile_details) %> <small>Edit client details for your record.</small></h1>
 </div>
 
 <div class="row">
@@ -12,7 +12,7 @@
     <!-- Client Details -->
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Profile Details</h3>
+        <h3 class="panel-title"><%= t(:profile_details) %></h3>
       </div>
       <div class="panel-body">
         <% @user.errors.full_messages.each do |msg| %>
@@ -23,13 +23,13 @@
           <%= f.fields_for :profile_attributes, @user.profile do |profile| %>
           <div class="col-md-6">
             <div class="form-group">
-              <%= profile.label :full_name, "Full Name" %>
+              <%= profile.label :full_name, t(:full_name) %>
               <%= profile.text_field :full_name, :class => "form-control" %>
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group">
-              <%= profile.label :facebook_id, "Facebook ID" %>
+              <%= profile.label :facebook_id, t(:facebook_id) %>
               <%= profile.text_field :facebook_id, :class => "form-control" %>
             </div>
           </div>
@@ -38,8 +38,8 @@
       </div>
       <div class="panel-footer">
         <div class="form-group">
-          <%= f.button "Save", :class => "btn btn-primary", data: { disable_with: "<i class='fa fa-spinner fa-spin'></i> Updating ..." } %>
-          <%= link_to 'Cancel', account_path, :class => "btn btn-link" %>
+          <%= f.button t(:save), :class => "btn btn-primary", data: { disable_with: "<i class='fa fa-spinner fa-spin'></i> Updating ..." } %>
+          <%= link_to t(:cancel), account_path, :class => "btn btn-link" %>
         </div>
       </div>
     </div>

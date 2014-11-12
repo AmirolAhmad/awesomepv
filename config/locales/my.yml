@@ -1,7 +1,7 @@
 my:
   submit_video: "Hantar Video"
   submit_picture: "Hantar Gambar"
-  login: "Daftar masuk"
+  login: "Daftar Masuk"
   register: "Cipta Akaun"
   contact: "Hubungi Kami"
   subscribe: "Langgan Surat Berita Kami"
@@ -12,5 +12,108 @@ my:
   ads: "iklan"
   published_on: "Diterbitkan pada"
   by: "Oleh"
+  share_fb: "Kongsi di Facebook"
+  share_twitter: "Kongsi di Twitter"
+  may_like: Anda juga mungkin menyukai
   people_viewed: "orang telah melihat video ini"
   view_this: "Lihat video ini"
+  got_new: "Punyai video atau gambar untuk dihantar? Daftar masuk disini"
+  remember_me: "Ingat saya untuk 2 minggu"
+  password: "Kata Laluan"
+  password_confirmation: "konformasi Kata Laluan"
+  username: "Nama Pengguna atau Emel"
+  already_member: "Sudah menjadi ahli? Daftar masuk disini"
+  register_new: "Daftar akaun baru"
+  forgot_pass: "Terlupa kata laluan?"
+  didnt_receive: "Tidak menerima arahan untuk konformasi?"
+  be_member: "Mahu jadi ahli?"
+  share: "Kongsi video atau gambar anda yang menarik dengan menjadi ahli kami"
+  username_only: "Nama Pengguna"
+  email: "Alamat Emel"
+  full_name: "Nama Penuh"
+  facebook_id: "ID Facebook"
+  min_charac: "minimum huruf"
+  create_acc: "Cipta akaun saya"
+  unlock_instruc: "Tidak menerima arahan membuka kunci?"
+  my_profile: "Profil Saya"
+  my_account: "Akaun Saya"
+  acc_sett: "Penetapan Akaun"
+  profile_details: "Maklumat Profil"
+  video_details: "Maklumat Video"
+  picture_details: "Maklumat Gambar"
+  my_details: "Maklumat Saya"
+  manage_profile: "Urus maklumat profil anda disini"
+  manage_acc: "Urus maklumat akaun anda disini"
+  edit: 'Kemaskini'
+  video_list: 'Senarai Video'
+  picture_list: 'Senarai Gambar'
+  manage_video: "Urus maklumat video anda disini"
+  manage_picture: "Urus maklumat gambar anda disini"
+  list_video: "Senarai Video yang Dihantar"
+  list_picture: "Senarai Gambar yang Dihantar"
+  new_video: "Hantar Video Baru"
+  new_picture: "Hantar Gambar Baru"
+  edit_video: "Kemaskini Video"
+  edit_video_desc: "Kemaskini video anda disini"
+  edit_picture: "Kemaskini Gambar"
+  edit_picture_desc: "Kemaskini gambar anda disini"
+  video_title: "Tajuk Video"
+  picture_title: "Tajuk Gambar"
+  video_title_limit: "Tidak lebih dari 240 aksara"
+  video_desc_limit: "Tidak lebih dari 500 aksara"
+  picture_title_limit: "Tidak lebih dari 240 aksara"
+  picture_desc_limit: "Tidak lebih dari 500 aksara"
+  video_description: "Deskripsi Video"
+  picture_desc: "Deskripsi Gambar"
+  youtube_id: "ID Youtube"
+  youtube_instruc: "Pastikan anda hanya salin ID Youtube tersebut (klik disini untuk maklumat lanjut)"
+  source: "Sumber Dari"
+  as_featured: "Jadikan video ini sebagai pilihan"
+  as_featured_pic: "Jadikan gambar ini sebagai pilihan"
+  submit_video: "Hantar Video"
+  submit_picture: "Hantar Gambar"
+  cancel: "Batal"
+  video_date: "Tarikh Masuk"
+  picture_date: "Tarikh Masuk"
+  action: "Aksi"
+  new_video_desc: "Cipta video baru disini"
+  new_picture_desc: "Cipta gambar baru disini"
+  set_cover_photo: "Tetapkan Gambar Utama"
+  current_photo: "Gambar Utama Semasa"
+  replace_photo: "Ganti Gambar Utama"
+  save: "Simpan"
+  email: Alamat Email
+  password: Kata Laluan
+  password_confirmation: Konformasi kata laluan
+  username: Nama Pengguna
+  new_pass: Kata Laluan Baru
+  new_pass_con: Konformasi Kata Laluan Baru
+  current_pass: Kata Laluan Semasa
+  new_pass_alert: (biarkan kosong jika anda tidak mahu menukarkannya)
+  current_pass_alert: (kami perlukan kata laluan semasa anda untuk mengesahkan perubahan)
+  update: Kemaskini
+  cancel_acc: Batalkan Akaun Saya
+  cancel_acc_note: "Jika anda kurang senang dengan perkhidmatan kami, anda boleh batalkan akaun anda disini. Jangan lupa untuk mengembalikan kembali akaun anda pada bila-bila masa yang anda mahu."
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: tidak boleh dikosongkan
+            password:
+              blank: tidak boleh dikosongkan
+              too_short: terlalu pendek
+            password_confirmation:
+              confirmation: tidak sama
+            username:
+              taken: tersebut telah wujud
+              blank: tidak boleh dikosongkan
+    models:
+      user:
+    attributes:
+      user:
+        email: Alamat email
+        password: Kata laluan
+        password_confirmation: Konformasi kata laluan
+        username: Nama pengguna

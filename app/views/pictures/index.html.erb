@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h1>Picture List <small>Manage your picture details here.</small></h1>
+  <h1><%= t(:picture_list) %> <small><%= t(:manage_picture) %></small></h1>
 </div>
 
 <div class="row">
@@ -9,16 +9,16 @@
   <div class="col-md-8">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">List Submitted Picture <%= link_to 'Submit New Picture', new_picture_path, :class => "pull-right btn btn-primary btn-xs", :style => "color:#ffffff;" %></h3>
+        <h3 class="panel-title"><%= t(:list_picture) %> <%= link_to t(:new_picture), new_picture_path, :class => "pull-right btn btn-primary btn-xs", :style => "color:#ffffff;" %></h3>
       </div>
       <div class="panel-body">
         <div class="table-responsive">
           <table class="table table-bordered table-hover" id="pictureDetails">
             <thead>
               <tr>
-                <th>Picture Title</th>
-                <th>Date Added</th>
-                <th class="col-md-2">Action</th>
+                <th><%= t(:picture_title) %></th>
+                <th><%= t(:picture_date) %></th>
+                <th class="col-md-2"><%= t(:action) %></th>
               </tr>
             </thead>
             <tbody>

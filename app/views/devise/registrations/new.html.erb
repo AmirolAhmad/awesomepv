@@ -2,7 +2,7 @@
   <div class="col-md-8 col-md-offset-2">
 
     <div class="page-header">
-      <h1>Be a member? <small>Share your interesting video by joining us</small></h1>
+      <h1><%= t(:be_member) %> <small><%= t(:share) %></small></h1>
     </div>
     <%= devise_error_messages! %>
 
@@ -12,29 +12,29 @@
         <div class="form-group">
           <div class="input-group">
             <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
-            <%= f.text_field :username, autofocus: true, :class => "form-control", :placeholder => "Username" %>
+            <%= f.text_field :username, autofocus: true, :class => "form-control", :placeholder => t(:username_only) %>
           </div>
         </div>
         <div class="form-group">
           <div class="input-group">
             <div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
-            <%= f.email_field :email, :class => "form-control", :placeholder => "Email Address" %>
+            <%= f.email_field :email, :class => "form-control", :placeholder => t(:email) %>
           </div>
         </div>
         <div class="form-group">
           <div class="input-group">
             <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
-            <%= f.password_field :password, autocomplete: "off", :class => "form-control", :placeholder => "Password" %>
+            <%= f.password_field :password, autocomplete: "off", :class => "form-control", :placeholder => t(:password) %>
           </div>
-          <p class="help-block"><% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %></p>
+          <p class="help-block"><% if @validatable %><i>(<%= @minimum_password_length %> <%= t(:min_charac) %>)</i><% end %></p>
         </div>
         <div class="form-group">
           <div class="input-group">
             <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
-            <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control", :placeholder => "Password Confirmation" %>
+            <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control", :placeholder => t(:password_confirmation) %>
           </div>
         </div>
-        <%= f.button "Create my account", :class => "btn btn-primary btn-block", data: { disable_with: "<i class='fa fa-spinner fa-spin'></i> Registering ..." } %>
+        <%= f.button t(:create_acc), :class => "btn btn-primary btn-block", data: { disable_with: "<i class='fa fa-spinner fa-spin'></i> Registering ..." } %>
       <% end %>
 
       <hr>
