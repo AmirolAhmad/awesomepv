@@ -1,41 +1,50 @@
 Rails.application.routes.draw do
   devise_for :users
-  devise_scope :user do
-    delete 'sign_out', :to => 'devise/sessions#destroy'
-    get '/login' => 'devise/sessions#new'
-    get '/register' => 'devise/registrations#new'
-  end
-  get 'pages/index'
-
-  namespace :admin, path: '/master' do
-    get "/" => "dashboards#index", as: 'master'
-    resources :dashboards, only: [:index]
-    resources :users do
-      resources :videos, only: [:index, :edit, :update, :destroy]
-      resources :pictures, only: [:index, :edit, :update, :destroy]
+  scope "/:locale" do
+    devise_scope :user do
+      delete 'sign_out', :to => 'devise/sessions#destroy'
+      get '/login' => 'devise/sessions#new'
+      get '/register' => 'devise/registrations#new'
     end
   end
 
-  resource :account, only: [:show, :edit, :update]
-  resources :pictures do
-    collection do
-      get 'next_stories'
-    end
-  end
-  resources :videos do
-    collection do
-      get 'next_stories'
-    end
-  end
+  get '/:locale' => 'pages#index'  
 
-  get '/v=:id' => 'videos#show', as: 'watch' #example - awesomepv.dev/v=aNFo5HWC3QI
-  get '/p=:id' => 'pictures#show', as: 'view'
+  scope "/:locale" do
+
+    namespace :admin, path: '/master' do
+      get "/" => "dashboards#index", as: 'master'
+      resources :dashboards, only: [:index]
+      resources :users do
+        resources :videos, only: [:index, :edit, :update, :destroy]
+        resources :pictures, only: [:index, :edit, :update, :destroy]
+      end
+    end
+
+    resource :account, only: [:show, :edit, :update]
+    resources :pictures do
+      collection do
+        get 'next_stories'
+      end
+    end
+    resources :videos do
+      collection do
+        get 'next_stories'
+      end
+    end
+
+    get '/v=:id' => 'videos#show', as: 'watch' #example - awesomepv.dev/v=aNFo5HWC3QI
+    get '/p=:id' => 'pictures#show', as: 'view'
+    
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'pages#index'
+  scope "/:locale" do
+    root 'pages#index'
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
