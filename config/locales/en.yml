@@ -37,7 +37,10 @@ en:
   share_twitter: "Share on Twitter"
   may_like: You also may like
   people_viewed: "people views this video"
+  people_viewed_pic: "people views this picture"
   view_this: "View this video"
+  view_this_pic: "View this picture"
+  full_res: Click to view in full size resolution
   got_new: "Got a new video or picture to submit? Sign in here"
   remember_me: "Remember me for 2 weeks"
   password: "Password"

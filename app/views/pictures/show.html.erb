@@ -20,22 +20,22 @@
   <!-- Video 1 -->
   <h3><%= @picture.title %></h3>
   <div class="metaDetails">
-    <p><%= @picture.views %> people views this picture</p>
+    <p><%= @picture.views %> <%= t(:people_viewed_pic) %></p>
   </div>
   <div class="img-item img-popup">
     <%= image_tag @picture.cover_photo_url(:cover).to_s %>
     <figcaption class="img-title">
-      <h5>Click to view in full size resolution</h5>    
+      <h5><%= t(:full_res) %></h5>    
     </figcaption>
   </div>
 
   <div class="btn-group btn-group-lg btn-group-justified">
-    <a href="javascript:void(0)" onclick="PopupCenter('//www.facebook.com/sharer/sharer.php?u=<%= request.url %>', 'myPop1',600,450);" class="btn btn-facebook">Share on Facebook</a>
-    <a href="javascript:void(0)" onclick="PopupCenter('//twitter.com/intent/tweet?source=tweetbutton&original_referer=<%= request.url %>&text=<%= @picture.try(:title) %>&url=<%= request.url %>', 'myPop1',600,450);" class="btn btn-twitter">Share on Twitter</a>
+    <a href="javascript:void(0)" onclick="PopupCenter('//www.facebook.com/sharer/sharer.php?u=<%= request.url %>', 'myPop1',600,450);" class="btn btn-facebook"><%= t(:share_fb) %></a>
+    <a href="javascript:void(0)" onclick="PopupCenter('//twitter.com/intent/tweet?source=tweetbutton&original_referer=<%= request.url %>&text=<%= @picture.try(:title) %>&url=<%= request.url %>', 'myPop1',600,450);" class="btn btn-twitter"><%= t(:share_twitter) %></a>
   </div>
 
   <div class="metaDetails">
-    <p class="small">Published on <%= @picture.published_at.strftime("%d %B %Y") %> by <%= @picture.user.username.upcase %></p>
+    <p class="small"><%= t(:published_on) %> <%= @picture.published_at.strftime("%d %B %Y") %> by <%= @picture.user.username.upcase %></p>
   </div>
 <p class="text-justify"><%=h @picture.content %></p>
 
@@ -45,7 +45,7 @@
 <!-- Random Videos -->
 <div id="featuredVideos">
   <div class="separator m-b-xl">
-    <span>You also may like</span>
+    <span><%= t(:may_like) %></span>
   </div>
 
   <div class="row one-time">
@@ -55,7 +55,7 @@
       <%= image_tag picture.cover_photo_url(:thumb).to_s, :class => 'img-responsive' %>
       <% end %>
       <h4><%= picture.title %></h4>
-      <p class="small">Published on <%= picture.published_at.strftime("%d %B %Y") %></p>
+      <p class="small"><%= t(:published_on) %> <%= picture.published_at.strftime("%d %B %Y") %></p>
     </div>
     <% end %>
   </div>
