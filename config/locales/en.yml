@@ -20,4 +20,18 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  submit_video: "Submit Video"
+  submit_picture: "Submit Picture"
+  login: "Login"
+  register: "Register"
+  contact: "Contact Us"
+  subscribe: "Subscribe to our Newsletter"
+  backTotop: "Back to top"
+  copyright: "Copyright 2014. All right reserved"
+  latest_video: "Latest Videos"
+  latest_picture: "Latest Pictures"
+  ads: "advertisement"
+  published_on: "Published on"
+  by: "by"
+  people_viewed: "people views this video"
+  view_this: "View this video"
