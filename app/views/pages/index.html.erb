@@ -45,7 +45,7 @@
 <!-- Featured Videos -->
 <div id="featuredVideos">
   <div class="separator m-b-xl">
-    <span>Latest Videos</span>
+    <span><%= t(:latest_video) %></span>
   </div>
 
   <div class="row">
@@ -55,7 +55,7 @@
       <img src="//i3.ytimg.com/vi/<%= video.youtube_id %>/maxresdefault.jpg" alt="" class="img-responsive">
       <h4><%= video.title %></h4>
       <% end %>
-      <p class="small">Published on <%= video.published_at.strftime("%d %B %Y") %></p>
+      <p class="small"><%= t(:published_on) %> <%= video.published_at.strftime("%d %B %Y") %></p>
     </div>
     <% end %>
   </div>
@@ -65,7 +65,7 @@
 <!-- Featured Videos -->
 <div id="featuredVideos">
   <div class="separator m-b-xl">
-    <span>Latest Picture</span>
+    <span><%= t(:latest_picture) %></span>
   </div>
 
   <div class="row one-time">
@@ -75,7 +75,7 @@
       <%= image_tag picture.cover_photo_url(:thumb).to_s, :class => "img-responsive" %>
       <h4><%= picture.title %></h4>
       <% end %>
-      <p class="small">Published on <%= picture.published_at.strftime("%d %B %Y") %></p>
+      <p class="small"><%= t(:published_on) %> <%= picture.published_at.strftime("%d %B %Y") %></p>
     </div>
     <% end %>
   </div>
@@ -85,7 +85,7 @@
 <div class="separator m-v-lg"></div>
 
 <center>
-<p class="small">- advertisement -</p>
+<p class="small">- <%= t(:ads) %> -</p>
 <%= link_to image_tag("728x90.png", :alt => "We are looking for a new owner", :class => 'img-responsive'), "mailto: lisa.andria11@gmail.com", :target => "_blank" %>
 </center>
 

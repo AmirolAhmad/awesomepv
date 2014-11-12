@@ -38,10 +38,10 @@
         </li>
         <% end %>
         <li>
-          <%= link_to 'Submit Video', new_video_path %>
+          <%= link_to t(:submit_video), new_video_path %>
         </li>
         <li>
-          <%= link_to 'Submit Picture', new_picture_path %>
+          <%= link_to t(:submit_picture), new_picture_path %>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right nomar">
@@ -55,12 +55,12 @@
         <% else %>
         <li>
           <%= link_to login_path do %>
-            <span class="glyphicon glyphicon-user"></span> Login
+            <span class="glyphicon glyphicon-user"></span> <%= t(:login) %>
           <% end %>
         </li>
         <li>
           <%= link_to register_path do %>
-            <span class="glyphicon glyphicon-lock"></span> Register
+            <span class="glyphicon glyphicon-lock"></span> <%= t(:register) %>
           <% end %>
         </li>
         <% end %>
