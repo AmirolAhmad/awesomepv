@@ -18,5 +18,7 @@
  *= require slick
  *= require magnific-popup
  *= require font-awesome
+ *= require nprogress
+ *= require nprogress-bootstrap
  *= require bootstrap
  */

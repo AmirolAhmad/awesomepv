@@ -18,6 +18,8 @@
 //= require dataTables.bootstrap
 //= require slick
 //= require jquery.magnific-popup
+//= require nprogress
+//= require nprogress-turbolinks
 //= require turbolinks
 //= require_tree .
 
